@@ -10,7 +10,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "botkit-discord": "^0.1.0"
   },
   "engines": {
     "node": "8.x"
