@@ -1,7 +1,7 @@
 const discordBotkit = require('botkit-discord');
 
 const configuration = {
-	token: 'NTE5OTg4NDEyMzA5MDQ1MjU0.DuoGDA.KGQltkmzDcpxTmm1leT37DRVXgs'
+	token: process.ENV.DISCORD_TOKEN
 };
 
 const discordBot = discordBotkit(configuration);
@@ -23,4 +23,10 @@ discordBot.hears('.*', 'mention', (bot, message) => {
 
 	const randomIndex = Math.floor(Math.random() * responses.length);
 	bot.reply(message, responses[randomIndex]);
+});
+
+
+discordBot.hears('hello world', direct_message, (bot, message) => {
+    // ! Do not forget to pass along the message as the first parameters
+    bot.reply(message, 'testing');
 });
