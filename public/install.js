@@ -55,3 +55,20 @@ function getDomain(){
 }
 
 getDomain();
+
+
+  function clipboard(element) {
+    let copyText = document.getElementById(element);
+    copyText.select();
+    document.execCommand("Copy");
+  }
+
+  function generateEnv() {
+    let clientId = document.getElementById('discordToken').value || '<Your token value here>';
+    let env = `string text line 1
+ string text line 2`;
+    var env = '# slack app credentials\nclientId=' + clientId;
+    document.getElementById('env_file').value = env;
+  }
+
+generateEnv();

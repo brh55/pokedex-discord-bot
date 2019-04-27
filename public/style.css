@@ -69,3 +69,24 @@ footer {
   padding-top: 25px;
   border-top: 1px solid lightgrey;
 }
+
+
+
+textarea {
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", Monospace;
+  font-size: inherit;
+  width: 100%;
+  padding: 4px 0px 2px;
+  resize: none;
+    border: 1px solid lightgrey;
+  border-radius: 3px;
+  background: none;
+  -webkit-transition: -webkit-box-shadow 0.1s;
+  transition: -webkit-box-shadow 0.1s;
+  transition: box-shadow 0.1s;
+  transition: box-shadow 0.1s, -webkit-box-shadow 0.1s;
+}
+textarea:focus {
+  -webkit-box-shadow: 0px 0px 3px 0px #a2d7ff;
+          box-shadow: 0px 0px 3px 0px #a2d7ff;
+}

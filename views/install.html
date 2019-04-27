@@ -60,39 +60,46 @@
         The <em>only</em> place you should put it is a file called
         <code>.env</code>
       </p>
-      
-      
 
-      
       <p>
-        You should put your token after <code>DISCORD_TOKEN=</code>. So if your token is <code>ewriewirew438234adadfs</code> it will look like <code>DISCORD_TOKEN=ewriewirew438234adadfs</code>. Make sure you don't accidentally add any spaces or other characters after it because it won't work correctly. 
+        You should put your token after <code>DISCORD_TOKEN=</code>. So if your
+        token is <code>ewriewirew438234adadfs</code> it will look like
+        <code>DISCORD_TOKEN=ewriewirew438234adadfs</code>. Make sure you don't
+        accidentally add any spaces or other characters after it because it
+        won't work correctly.
       </p>
-      <h3>
-        .env file generator
-      </h3>
+      <h3>.env file generator</h3>
+      <p>This tool will help you set up your <code>.env</code> file</p>
       <p>
-        This tool will help you take your 
+        <label>Token</label>
+        <input
+          id="discordToken"
+          class="copyurl"
+          onchange="generateEnv()"
+          placeholder="Paste your token here "
+        />
       </p>
-      <p>
-    <label>Client Secret:</label>
-    <input id="clientSecret" class="copyurl" onchange="generateEnv()" placeholder="Paste your token here "/>
-  </p>
-      
-      <h2>
-        OK I've added my token to .env
-      </h2>
+      <div class="input">
+        <label>This is what your .env file should be like, you can copy and replace the old one</label>
+        <div class="addon">
+          <textarea rows="3" class="copyurl" id="env_file"></textarea>
+          <button class="textarea" onclick="clipboard('env_file')">Copy</button>
+        </div>
+      </div>
+      <h2>OK I've added my token to .env</h2>
       <button id="checkInstallButton">Check Connection</button>
       <div id="connectedSection">
         <p>
-          Looks like your token is working! Click the refresh button to refresh the page and see further steps for building your bot:
+          Looks like your token is working! Click the refresh button to refresh
+          the page and see further steps for building your bot:
         </p>
-              <button id="refreshPageButton">Refresh!</button>
-
+        <button id="refreshPageButton">Refresh!</button>
       </div>
-      
+
       <div id="errorSection">
         <p>
-          Oops look's like there might be something wrong with your <code>.env</code> file. Check it out and then try again.
+          Oops look's like there might be something wrong with your
+          <code>.env</code> file. Check it out and then try again.
         </p>
       </div>
     </main>
