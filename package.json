@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botkit-discord": "0.0.6"
+    "botkit-discord": "0.0.6",
+    "express": "^4.16.4"
   }
 }

@@ -39,4 +39,9 @@ One option for keeping your bot awake with HTTP requests is Uptime Robot
 ### Where's my storage?
 If you notice in the logs there's the message `info: ** No persistent storage method specified! Data may be lost when process shuts down.`. That means that bot can't save anything. If you want to save things like the number of points a user has, you'll need storage. 
 
-There are many options for this on Glitch. SQLITE and 
+There are many options for this on Glitch. SQLITE and flat file databases are popular options, but some caveats to remember are: 
+- if you edit the database in the Glitch editor it may become corrupted
+- if you put it in `.data` it is not backed up the same way the other code is, it can be recovered by support but it can take us time
+- flat file databases (like those that use .json files) often don't handle multiple people querying it well and become corrupted.
+
+An option that has none of those downsides is Firebase. And Firebase has a [Botkit connector](https://github.com/howdyai/botkit-storage-firebase). 
