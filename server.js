@@ -15,6 +15,14 @@ app.use(express.static("public"));
 app.get("/test", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
+
+app.get("/domainname", function(request, response) {
+  let domain = process.env.PROJECT_DOMAIN;
+  response.status(200).json({
+    message: domain
+  });
+});
+
 app.get("/monitor", function(request, response) {
   let uptime = process.uptime();
   response.status(200).json({
