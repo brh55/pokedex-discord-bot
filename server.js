@@ -17,8 +17,14 @@ if (!process.env.DISCORD_TOKEN) {
   app.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/install.html");
   });
+  
+  
+  app.get("/test", function(request, response) {
+    response.send(200);
+  });
 
   app.get("/env/:token", function(request, response) {
+    
     fs.readFile(".env", function(err, data) {
       if (err) {
         return console.error(err);
@@ -26,33 +32,18 @@ if (!process.env.DISCORD_TOKEN) {
 
       var result = data
         .toString()
-        .replace(/DISCORD_TOKEN=/g, "DISCORD_TOKEN=meow");
+        .replace(/DISCORD_TOKEN=/g, "DISCORD_TOKEN"+ request.params.token);
 
       fs.writeFile(".env", result, "utf8", function(err) {
         if (err) return console.log(err);
+        
       });
     });
     response.send(200);
   });
 }
 
-app.get("/env", function(request, response) {
-  fs.readFile(".env", function(err, data) {
-    if (err) {
-      return console.error(err);
-    }
-    console.log("Asynchronous read: " + data.toString());
 
-    var result = data
-      .toString()
-      .replace(/DISCORD_TOKEN=/g, "DISCORD_TOKEN=meow");
-
-    fs.writeFile(".env", result, "utf8", function(err) {
-      if (err) return console.log(err);
-    });
-  });
-  response.send(200);
-});
 // http://expressjs.com/en/starter/basic-routing.html
 /*app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
