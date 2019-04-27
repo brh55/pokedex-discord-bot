@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="/style.css" />
 
     <!-- import the webpage's client-side javascript file -->
-    <script src="/client.js" defer></script>
+    <script src="/install.js" defer></script>
   </head>
   <body>
     <header><h1>Starter Botkit Discord</h1></header>
@@ -61,16 +61,7 @@
         <code>.env</code>
       </p>
 
-      <!-- Copy and Paste Me -->
-      <div class="glitch-embed-wrap" style="height: 361px; width: 100%;">
-        <iframe
-          allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-          src="https://glitch.com/embed/#!/embed/starter-botkit-discord?path=.env&previewSize=0"
-          alt="starter-botkit-discord on Glitch"
-          style="height: 100%; width: 100%; border: 0;"
-        >
-        </iframe>
-      </div>
+
       
       <p>
         You should put your token after <code>DISCORD_TOKEN=</code>. So if your token is <code>ewriewirew438234adadfs</code> it will look like <code>DISCORD_TOKEN=ewriewirew438234adadfs</code>. Make sure you don't accidentally add any spaces or other characters after it because it won't work correctly. 
@@ -79,7 +70,7 @@
       <h2>
         OK I've added my token to .env
       </h2>
-      <button>Check Connection</button>
+      <button id="checkInstallButton">Check Connection</button>
 
     </main>
 

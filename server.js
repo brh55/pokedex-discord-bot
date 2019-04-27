@@ -22,12 +22,14 @@ app.get("/monitor", function(request, response) {
   });
 });
 
-app.get("/checktoken", function(request, response) {
+app.get("/checkinstall", function(request, response) {
   if (!process.env.DISCORD_TOKEN) {
-      response.status(500)
+    console.log("no token")
+      throw new Error("no token")
   } else {
-      response.status(200)
+        console.log("token")
 
+  response.send('OK')
   }
 });
 
