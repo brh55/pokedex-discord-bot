@@ -12,24 +12,31 @@ const app = express();
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
-  app.get("/test", function(request, response) {
-    response.sendFile(__dirname + "/views/index.html");
+app.get("/test", function(request, response) {
+  response.sendFile(__dirname + "/views/index.html");
+});
+app.get("/monitor", function(request, response) {
+  let uptime = process.uptime();
+  response.status(200).json({
+    message: uptime
   });
-  app.get("/monitor", function(request, response) {
-    let uptime = process.uptime();
-    response.status(200).json({
-      message: uptime
-    });
-  });
+});
+
+app.get("/checktoken", function(request, response) {
+  if (!process.env.DISCORD_TOKEN) {
+      response.status(500)
+  } else {
+      response.status(200)
+
+  }
+});
 
 if (!process.env.DISCORD_TOKEN) {
   app.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/install.html");
   });
-  
 
-
-  app.get("/env/:token", function(request, response) {
+  /*app.get("/env/:token", function(request, response) {
     
     fs.readFile(".env", function(err, data) {
       if (err) {
@@ -47,9 +54,8 @@ if (!process.env.DISCORD_TOKEN) {
       });
     });
     response.send(200);
-  });
+  });*/
 }
-
 
 // http://expressjs.com/en/starter/basic-routing.html
 /*app.get('/', function(request, response) {
@@ -60,5 +66,3 @@ if (!process.env.DISCORD_TOKEN) {
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
-
