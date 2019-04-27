@@ -45,26 +45,6 @@ if (!process.env.DISCORD_TOKEN) {
   app.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/install.html");
   });
-
-  /*app.get("/env/:token", function(request, response) {
-    
-    fs.readFile(".env", function(err, data) {
-      if (err) {
-        return console.error(err);
-      }
-
-      var result = data
-        .toString()
-        .replace(/DISCORD_TOKEN=/g, "DISCORD_TOKEN"+ request.params.token);
-
-      fs.writeFile(".env", result, "utf8", function(err) {
-        if (err) return console.log(err);
-            require('child_process').exec('refresh');
-
-      });
-    });
-    response.send(200);
-  });*/
 }
 
 // http://expressjs.com/en/starter/basic-routing.html
