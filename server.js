@@ -12,6 +12,15 @@ const app = express();
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
+  app.get("/test", function(request, response) {
+    response.sendFile(__dirname + "/views/index.html");
+  });
+  app.get("/monitor", function(request, response) {
+    let uptime = process.uptime();
+    response.status(200).json({
+      message: uptime
+    });
+  });
 
 if (!process.env.DISCORD_TOKEN) {
   app.get("/", function(request, response) {
@@ -53,4 +62,3 @@ const listener = app.listen(process.env.PORT, function() {
 });
 
 
-console.log(process.uptime());
