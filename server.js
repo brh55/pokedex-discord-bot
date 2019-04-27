@@ -18,10 +18,7 @@ if (!process.env.DISCORD_TOKEN) {
     response.sendFile(__dirname + "/views/install.html");
   });
   
-  
-  app.get("/test", function(request, response) {
-    response.send(200);
-  });
+
 
   app.get("/env/:token", function(request, response) {
     
@@ -36,7 +33,8 @@ if (!process.env.DISCORD_TOKEN) {
 
       fs.writeFile(".env", result, "utf8", function(err) {
         if (err) return console.log(err);
-        
+            require('child_process').exec('refresh');
+
       });
     });
     response.send(200);
@@ -53,3 +51,6 @@ if (!process.env.DISCORD_TOKEN) {
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
+
+
+console.log(process.uptime());
