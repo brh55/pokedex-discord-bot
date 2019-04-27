@@ -11,58 +11,83 @@
 <html lang="en">
   <head>
     <title>Welcome to Glitch!</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css" />
+
     <!-- import the webpage's client-side javascript file -->
     <script src="/client.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>
-        Starter Botkit Discord
-      </h1>
-    </header>
+    <header><h1>Starter Botkit Discord</h1></header>
 
     <main>
-      
-      <h2>
-        Register your Discord application
-      </h2>
+      <h2>Remix this project</h2>
       <p>
-        The first step is to create a new Application on the <a href="https://discordapp.com/developers/applications/">Discord developer portal</a>. Once you've created one you should see 
+        "Remixing" on Glitch makes a new copy of this project. It will have a
+        randomly generated name which you can change.
+      </p>
+
+      <h2>Register your Discord application</h2>
+      <p>
+        The first step is to create a new Application on the
+        <a href="https://discordapp.com/developers/applications/"
+          >Discord developer portal</a
+        >.
+      </p>
+
+      <h2>Get Your Token</h2>
+      <p>
+        Once you've created a Discord Application you should see an option on
+        the sidebar labeled "Bot". Click on it. Now this is where you'll get
+        your token. A token is a password, which means you want to keep it
+        secure. If someone gets it they can act as your bot, which can case some
+        issues. You don't want it in <code>server.js </code> because by default
+        in Glitch anyone can see that file. And if you copy the project, it will
+        copy the file with the secure token.
+      </p>
+      <p>
+        The <em>only</em> place you should put it is the file shown below
+        <code>.env</code>
+      </p>
+
+      <!-- Copy and Paste Me -->
+      <div class="glitch-embed-wrap" style="height: 361px; width: 100%;">
+        <iframe
+          allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+          src="https://glitch.com/embed/#!/embed/starter-botkit-discord?path=.env&previewSize=0"
+          alt="starter-botkit-discord on Glitch"
+          style="height: 100%; width: 100%; border: 0;"
+        >
+        </iframe>
+      </div>
+      
+      <p>
+        You should put your token after <code>DISCORD_TOKEN=</code>. So if your token is <code>ewriewirew438234adadfs</code> it will look like <code>DISCORD_TOKEN=ewriewirew438234adadfs</code>. Make sure you don't accidentally add any spaces or other characters after it because it won't work correctly. 
       </p>
       
       <h2>
-        Get Your Token
+        OK I've got my token!
       </h2>
-      
-    
-      <!-- Copy and Paste Me -->
-<div class="glitch-embed-wrap" style="height: 361px; width: 100%;">
-  <iframe
-    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
-    src="https://glitch.com/embed/#!/embed/starter-botkit-discord?path=.env&previewSize=0"
-    alt="starter-botkit-discord on Glitch"
-    style="height: 100%; width: 100%; border: 0;">
-  </iframe>
-</div>
+      <button>Check to see if it's </button>
+
     </main>
 
-    <footer>
-      Made with <a href="https://glitch.com">Glitch</a>!
-    </footer>
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
-
   </body>
 </html>
