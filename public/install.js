@@ -10,6 +10,9 @@ connectedSection.style.display = "none";
 const errorSection = document.getElementById("errorSection");
 errorSection.style.display = "none";
 
+const apiErrorSection = document.getElementById("errorSection");
+errorSection.style.display = "none";
+
 const envFileLink = document.getElementById("envFileLink");
 const projectURL = document.getElementById("project_url");
 
@@ -21,7 +24,10 @@ function checkInstall() {
     .then(resJson => {
       if (resJson.error) {
         console.log(resJson.error);
-              errorSection.style.display = "block";
+        if(resJson.error == "notoken"){
+                      errorSection.style.display = "block";
+
+        }
 
       } else {
              connectedSection.style.display = "block";

@@ -4,7 +4,7 @@
 // init project
 const express = require("express");
 const fs = require("fs");
-const discordBotkit = require('botkit-discord');
+const discordBotkit = require("botkit-discord");
 
 const app = express();
 
@@ -15,6 +15,10 @@ const app = express();
 app.use(express.static("public"));
 app.get("/guide", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
+});
+
+app.get("/install", function(request, response) {
+  response.sendFile(__dirname + "/views/install.html");
 });
 
 app.get("/domainname", function(request, response) {
@@ -44,17 +48,23 @@ app.get("/monitor", function(request, response) {
 app.get("/checkinstall", function(request, response) {
   if (!process.env.DISCORD_TOKEN) {
     console.log("no token");
-    response.send(500, { error: "token" });
+    response.send(500, { error: "notoken" });
   } else {
     console.log("token");
 
-const testBotConfig = {
-	token: process.env.DISCORD_TOKEN
-};
+    const testBotConfig = {
+      token: process.env.DISCORD_TOKEN
+    };
 
-const testBot = discordBotkit(testBotConfig);
-    console.log(testBot);
-    response.send("OK");
+    const testBot = discordBotkit(testBotConfig);
+    //  console.log(testBot);
+    testBot.on("disconnect", event => {
+      response.send(500, { error: "apierror" });
+    });
+
+    testBot.on("ready", event => {
+      response.send("OK");
+    });
   }
 });
 
