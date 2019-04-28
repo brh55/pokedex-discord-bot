@@ -46,7 +46,7 @@ app.get("/monitor", function(request, response) {
 });
 
 app.get("/checkinstall", function(request, response) {
-  if (!process.env.DISCORD_TOKEN) {
+  if (!process.env.DISCORD_TOKEN || !process.env.CLIENT_ID) {
     console.log("no token");
     response.send(500, { error: "notoken" });
   } else {
@@ -63,7 +63,9 @@ app.get("/checkinstall", function(request, response) {
     });
 
     testBot.on("ready", event => {
-      response.send("OK");
+      response.status(200).json({
+    message: "yay"
+  });
     });
   }
 });

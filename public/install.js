@@ -10,8 +10,8 @@ connectedSection.style.display = "none";
 const errorSection = document.getElementById("errorSection");
 errorSection.style.display = "none";
 
-const apiErrorSection = document.getElementById("errorSection");
-errorSection.style.display = "none";
+const apiErrorSection = document.getElementById("apiErrorSection");
+apiErrorSection.style.display = "none";
 
 const envFileLink = document.getElementById("envFileLink");
 const projectURL = document.getElementById("project_url");
@@ -20,18 +20,20 @@ let domainName = "";
 
 function checkInstall() {
   console.log("test");
-  return fetch("/checkinstall/").then(res => res.json())
+  return fetch("/checkinstall/")
+    .then(res => res.json())
     .then(resJson => {
       if (resJson.error) {
         console.log(resJson.error);
-        if(resJson.error == "notoken"){
-                      errorSection.style.display = "block";
-
+        if (resJson.error == "notoken") {
+          errorSection.style.display = "block";
         }
 
+        if (resJson.error == "apierror") {
+          apiErrorSection.style.display = "block";
+        }
       } else {
-             connectedSection.style.display = "block";
-
+        connectedSection.style.display = "block";
       }
       return Promise.resolve();
     });
@@ -52,7 +54,7 @@ function getDomain() {
         console.log(resJson.message);
         domainName = resJson.message;
         console.log("domain name " + domainName);
-        projectURL.value = "https://" + domainName + ".glitch.me"
+        projectURL.value = "https://" + domainName + ".glitch.me";
         envFileLink.href =
           "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
       }
@@ -71,9 +73,10 @@ function clipboard(element) {
 function generateEnv() {
   let discordToken =
     document.getElementById("discordToken").value || "<Your token value here>";
-    let discordClientID =
-    document.getElementById("discordClientID").value || "<Your client ID value here>";
-  
+  let discordClientID =
+    document.getElementById("discordClientID").value ||
+    "<Your client ID value here>";
+
   let env = `# Environment Config
 
 # store your secrets and config variables in here
