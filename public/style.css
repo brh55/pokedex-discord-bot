@@ -90,3 +90,17 @@ textarea:focus {
   -webkit-box-shadow: 0px 0px 3px 0px #a2d7ff;
           box-shadow: 0px 0px 3px 0px #a2d7ff;
 }
+
+
+.button-wrap {
+    display: block;
+    margin-bottom: 12px;
+}
+
+.pop-over input[type="checkbox"], .pop-over .input[type="checkbox"] {
+	width: 14px;
+	margin: 0;
+	margin-right: 5px;
+	vertical-align: 0;
+	cursor: pointer;
+}
