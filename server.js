@@ -12,7 +12,7 @@ const app = express();
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
-app.get("/test", function(request, response) {
+app.get("/guide", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
@@ -20,6 +20,16 @@ app.get("/domainname", function(request, response) {
   let domain = process.env.PROJECT_DOMAIN;
   response.status(200).json({
     message: domain
+  });
+});
+
+app.get("/clientid", function(request, response) {
+  let clientID = process.env.CLIENT_ID;
+  let domain = process.env.PROJECT_DOMAIN;
+
+  response.status(200).json({
+    client: clientID,
+    domain: domain
   });
 });
 
@@ -32,12 +42,12 @@ app.get("/monitor", function(request, response) {
 
 app.get("/checkinstall", function(request, response) {
   if (!process.env.DISCORD_TOKEN) {
-    console.log("no token")
-      throw new Error("no token")
+    console.log("no token");
+    throw new Error("no token");
   } else {
-        console.log("token")
+    console.log("token");
 
-  response.send('OK')
+    response.send("OK");
   }
 });
 
@@ -56,4 +66,3 @@ if (!process.env.DISCORD_TOKEN) {
 const listener = app.listen(process.env.PORT, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
