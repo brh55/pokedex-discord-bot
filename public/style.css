@@ -33,15 +33,7 @@ form {
   border-radius: 3px;
 }
 
-input {
-  display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
-}
+
 
 button {
   font-size: 16px;
@@ -92,15 +84,3 @@ textarea:focus {
 }
 
 
-.button-wrap {
-    display: block;
-    margin-bottom: 12px;
-}
-
-.pop-over input[type="checkbox"], .pop-over .input[type="checkbox"] {
-	width: 14px;
-	margin: 0;
-	margin-right: 5px;
-	vertical-align: 0;
-	cursor: pointer;
-}
