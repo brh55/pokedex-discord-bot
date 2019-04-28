@@ -44,7 +44,7 @@ function getDomain() {
         console.log(resJson.message);
         domainName = resJson.message;
         console.log("domain name " + domainName);
-        projectURL.value = domainName;
+        projectURL.value = "https://" + domainName + ".glitch.me"
         envFileLink.href =
           "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
       }
@@ -63,6 +63,9 @@ function clipboard(element) {
 function generateEnv() {
   let discordToken =
     document.getElementById("discordToken").value || "<Your token value here>";
+    let discordClientID =
+    document.getElementById("discordClientID").value || "<Your client ID value here>";
+  
   let env = `# Environment Config
 
 # store your secrets and config variables in here
@@ -71,6 +74,7 @@ function generateEnv() {
 # reference these in your code with process.env.SECRET
 
 DISCORD_TOKEN=${discordToken}
+CLIENT_ID=${discordClientID}
 
 # note: .env is a shell file so there can't be spaces around =
 `;
