@@ -4,6 +4,7 @@
 // init project
 const express = require("express");
 const fs = require("fs");
+const discordBotkit = require('botkit-discord');
 
 const app = express();
 
@@ -43,10 +44,16 @@ app.get("/monitor", function(request, response) {
 app.get("/checkinstall", function(request, response) {
   if (!process.env.DISCORD_TOKEN) {
     console.log("no token");
-    throw new Error("no token");
+    response.send(500, { error: "token" });
   } else {
     console.log("token");
 
+const testBotConfig = {
+	token: process.env.DISCORD_TOKEN
+};
+
+const testBot = discordBotkit(testBotConfig);
+    console.log(testBot);
     response.send("OK");
   }
 });

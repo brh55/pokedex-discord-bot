@@ -17,16 +17,18 @@ let domainName = "";
 
 function checkInstall() {
   console.log("test");
-  return fetch("/checkinstall/").then(res => {
-    console.log(res);
-    if (res.status === 200) {
-      //awesome the token is working!
-      connectedSection.style.display = "block";
-    } else {
-      errorSection.style.display = "block";
-    }
-    return Promise.resolve();
-  });
+  return fetch("/checkinstall/").then(res => res.json())
+    .then(resJson => {
+      if (resJson.error) {
+        console.log(resJson.error);
+              errorSection.style.display = "block";
+
+      } else {
+             connectedSection.style.display = "block";
+
+      }
+      return Promise.resolve();
+    });
 }
 
 function refreshPage() {

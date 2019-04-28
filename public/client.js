@@ -5,7 +5,8 @@ const domainNameTitle = document.getElementById("domain-name-title");
 const addBotCopy = document.getElementById("add-bot-link");
 
 
-const oauthUrl = document.getElementById("oauth_url");
+const oauthUrl = document.getElementById("oauth-url");
+const oauthUrlGo = document.getElementById("oauth-url-go");
 
 const noClientFound = document.getElementById("no-client-found");
 noClientFound.style.display = "none";
@@ -30,6 +31,7 @@ function getDomain() {
         if (clientID) {
           addBotLink= "https://discordapp.com/api/oauth2/authorize?client_id="+clientID+"&permissions=0&scope=bot"
           oauthUrl.value = addBotLink;
+          oauthUrlGo.href= addBotLink;
           clientFound.style.display = "block";
 
         } else {
