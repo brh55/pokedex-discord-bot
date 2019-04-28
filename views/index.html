@@ -35,6 +35,25 @@
         Add your bot to a server
       </h2>
       
+      <p>
+        
+        <div class="input">
+        <label>Bot oauth URL</label>
+          <div id="no-client-found">
+             Oops looks like there is no client ID in <code>.env</code>. Check out the <a href="/install">Install guide to get it set up</a>
+          </div>
+        <div class="addon">
+          <input
+            readonly
+            class="copyurl"
+            id="oauth_url"
+            type="text"
+            value=""
+          />
+          <button onclick="clipboard('oauth_url')">Copy</button>
+        </div>
+      </div>
+      </p>
        <h2>
         Code your bot!
       </h2>
