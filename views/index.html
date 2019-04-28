@@ -11,76 +11,65 @@
 <html lang="en">
   <head>
     <title>Welcome to Glitch!</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css" />
+
     <!-- import the webpage's client-side javascript file -->
     <script src="/client.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>
-        Setup <span id="domain-name-title"></span>!
-      </h1>
+      <h1>Setup <span id="domain-name-title"></span>!</h1>
     </header>
 
     <main>
-      <h2>
-        Add your bot to a server
-      </h2>
-      
+      <h2>Add your bot to a server</h2>
       <p>
-        
-        <div class="input">
-        <label>Bot oauth URL</label>
-          <div id="no-client-found">
-             Oops looks like there is no client ID in <code>.env</code>. Check out the <a href="/install">Install guide to get it set up</a>
-          </div>
+        You have to have a server to add your bot to and you have to have admin permissions. Here is how to to it. 
+      </p>
+<p>
+  There are several ways to add a Discord bot to the server. For this one we'll use Oauth2, which allows you to use a link that authorizes your bot to a specific server. Read more here. 
+      </p>
+      <div id="no-client-found">
+        Oops looks like there is no client ID in <code>.env</code>. Check out
+        the <a href="/install">Install guide to get it set up</a>
+      </div>
+      <div class="input" id="client-found">
+        <label>Bot oauth2 URL</label>
+
         <div class="addon">
-          <input
-            readonly
-            class="copyurl"
-            id="oauth_url"
-            type="text"
-            value=""
-          />
+          <input readonly class="copyurl" id="oauth_url" type="text" value="" />
           <button onclick="clipboard('oauth_url')">Copy</button>
+          
+          <a href="" id="bot-add-link" class="button" target="new">Go</a>
         </div>
       </div>
-      </p>
-       <h2>
-        Code your bot!
-      </h2>
-      
-      <h2>
-       Protect your bot
-      </h2>
-      
-      
-      <h2>
-        Keep your bot awake
-      </h2>
-      
-      <h2>
-        Give your bot a memory
-      </h2>
-     
+
+      <h2>Code your bot!</h2>
+
+      <h2>Protect your bot</h2>
+
+      <h2>Keep your bot awake</h2>
+
+      <h2>Give your bot a memory</h2>
     </main>
 
-    <footer>
-      Made with <a href="https://glitch.com">Glitch</a>!
-    </footer>
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
 
     <!-- include the Glitch button to show what the webpage is about and
           to make it easier for folks to view source and remix -->
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
-
   </body>
 </html>
