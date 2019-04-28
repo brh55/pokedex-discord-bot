@@ -11,6 +11,7 @@ const errorSection = document.getElementById("errorSection");
 errorSection.style.display = "none";
 
 const envFileLink = document.getElementById("envFileLink");
+const projectURL = document.getElementById("project_url");
 
 let domainName = "";
 
@@ -43,6 +44,7 @@ function getDomain() {
         console.log(resJson.message);
         domainName = resJson.message;
         console.log("domain name " + domainName);
+        projectURL.value = domainName;
         envFileLink.href =
           "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
       }

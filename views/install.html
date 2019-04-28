@@ -37,12 +37,27 @@
         "Remixing" on Glitch makes a new copy of this project. It will have a
         randomly generated name which you can change.
       </p>
+      
+      <p>
+        <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"><img src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg" alt="Remix on Glitch" /></a>
+      </p>
+      
+        <div class="input">
+   <label>This Project's URL:</label>
+   <div class="addon">
+     <input readonly class="copyurl" id="project_url" type="text" value="" />
+     <button onclick="clipboard('project_url')">Copy</button>
+   </div>
 
       <h2>Create your Discord application</h2>
 
       <div>
         <fieldset>
-          <legend>Steps for creating a Discord Application</legend>
+          <legend>Steps for creating a Discord Application: Complete these at the  <a
+                href="https://discordapp.com/developers/applications"
+                target="new"
+                >Discord Developer Portal</a
+              ></legend>
           <div>
             <input type="checkbox" name="register" id="check_1" />
             <label for="check_1"
@@ -55,20 +70,40 @@
             >
           </div>
           
-                    <div>
+          <div>
             <input type="checkbox" name="register" id="check_2" />
             <label for="check_1"
               >Click "New Application" to create an application</label
             >
           </div>
+          
+          <div>
+            <input type="checkbox" name="register" id="check_3" />
+            <label for="check_1"
+              >Click on "Bot" on the sidebar to go to the "Bot" settings page</label
+            >
+          </div>
+          
+          
+          <div>
+            <input type="checkbox" name="register" id="check_4" />
+            <label for="check_1"
+              >Click the "Add bot" button on the "Bot" settings page</label
+            >
+          </div>
+          
+          <div>
+            <input type="checkbox" name="register" id="check_5" />
+            <label for="check_1"
+              >You should see a "token" section. Click "copy" to copy the token</label
+            >
+          </div>
         </fieldset>
       </div>
 
-      <h2>Get Your Token</h2>
+      <h2>Add your token to your Glitch APp</h2>
       <p>
-        Once you've created a Discord Application you should see an option on
-        the sidebar labeled "Bot". Click on it. Now this is where you'll get
-        your token. A token is a password, which means you want to keep it
+        A token is a password, which means you want to keep it
         secure. If someone gets it they can act as your bot, which can case some
         issues. You don't want it in <code>server.js </code> because by default
         in Glitch anyone can see that file. And if you copy the project, it will
