@@ -7,6 +7,7 @@ const fs = require("fs");
 const discordBotkit = require("botkit-discord");
 
 const app = express();
+const discordBot = require("./bot");
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -76,7 +77,7 @@ if (!process.env.DISCORD_TOKEN) {
   });
 } else {
   app.get("/", function(request, response) {
-    response.sendFile(__dirname + "/views/guide.html");
+    response.sendFile(__dirname + "/views/index.html");
   });
 
 }
