@@ -74,6 +74,11 @@ if (!process.env.DISCORD_TOKEN) {
   app.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/install.html");
   });
+} else {
+  app.get("/", function(request, response) {
+    response.sendFile(__dirname + "/views/guide.html");
+  });
+
 }
 
 // http://expressjs.com/en/starter/basic-routing.html
