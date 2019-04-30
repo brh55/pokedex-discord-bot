@@ -1,5 +1,5 @@
 let domainName;
-let clientID;
+let authUrl;
 let addBotLink;
 const domainNameTitle = document.getElementById("domain-name-title");
 const addBotCopy = document.getElementById("add-bot-link");
@@ -17,21 +17,20 @@ clientFound.style.display = "none";
 
 function getDomain() {
   console.log("test");
-  return fetch("/clientid/")
+  return fetch("/botinfo/")
     .then(res => res.json())
     .then(resJson => {
       if (resJson.error) {
         console.log(resJson.error);
       } else {
         domainName = resJson.domain;
-        clientID = resJson.client;
+        authUrl = resJson.url;
 
         console.log("domain name " + domainName);
         domainNameTitle.innerHTML = domainName;
-        if (clientID) {
-          addBotLink= "https://discordapp.com/api/oauth2/authorize?client_id="+clientID+"&permissions=0&scope=bot"
-          oauthUrl.value = addBotLink;
-          oauthUrlGo.href= addBotLink;
+        if (authUrl) {
+          oauthUrl.value = authUrl;
+          oauthUrlGo.href= authUrl;
           clientFound.style.display = "block";
 
         } else {

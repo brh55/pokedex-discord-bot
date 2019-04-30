@@ -29,12 +29,12 @@ app.get("/domainname", function(request, response) {
   });
 });
 
-app.get("/clientid", function(request, response) {
-  let clientID = process.env.CLIENT_ID;
+app.get("/botinfo", function(request, response) {
+  let authURL = discordBot.config.client.inviteURL;
   let domain = process.env.PROJECT_DOMAIN;
 
   response.status(200).json({
-    client: clientID,
+    url: authURL,
     domain: domain
   });
 });
@@ -47,7 +47,7 @@ app.get("/monitor", function(request, response) {
 });
 
 app.get("/checkinstall", function(request, response) {
-  if (!process.env.DISCORD_TOKEN || !process.env.CLIENT_ID) {
+  if (!process.env.DISCORD_TOKEN) {
     console.log("no token");
     response.send(500, { error: "notoken" });
   } else {

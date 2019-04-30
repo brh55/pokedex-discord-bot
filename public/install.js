@@ -73,9 +73,6 @@ function clipboard(element) {
 function generateEnv() {
   let discordToken =
     document.getElementById("discordToken").value || "<Your token value here>";
-  let discordClientID =
-    document.getElementById("discordClientID").value ||
-    "<Your client ID value here>";
 
   let env = `# Environment Config
 
@@ -85,7 +82,6 @@ function generateEnv() {
 # reference these in your code with process.env.SECRET
 
 DISCORD_TOKEN=${discordToken}
-CLIENT_ID=${discordClientID}
 
 # note: .env is a shell file so there can't be spaces around =
 `;
