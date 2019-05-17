@@ -28,6 +28,7 @@ function getDomain() {
 
         console.log("domain name " + domainName);
         domainNameTitle.innerHTML = domainName;
+        console.log(resJson)
         if (authUrl) {
           oauthUrl.value = authUrl;
           oauthUrlGo.href= authUrl;
