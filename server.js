@@ -6,6 +6,9 @@ const express = require("express");
 const fs = require("fs");
 const discordBotkit = require("botkit-discord");
 
+var Client = require('uptime-robot');
+var uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
+
 const app = express();
 const discordBot = require("./bot");
 

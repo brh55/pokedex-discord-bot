@@ -1,6 +1,7 @@
 dependencies:
   botkit-discord: 0.0.6
   express: 4.16.4
+  uptime-robot: 1.3.0
 packages:
   /@ciscospark/common-evented/1.50.19:
     dependencies:
@@ -621,6 +622,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-3103v8XC7wdV4qpPkv6ufUtaly8=
+  /asap/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-sqRdpf36ILBJb8N2jMJ8EvqRan0=
   /asap/2.0.6:
     dev: false
     resolution:
@@ -835,6 +840,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-+OcRMvf/5uAaXJaXpMbz5I1cyBk=
+  /buffer-from/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
   /bytes/3.0.0:
     dev: false
     engines:
@@ -847,6 +856,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-MvxLn82vhF/N9+c7uXysImHwqwo=
+  /caseless/0.11.0:
+    dev: false
+    resolution:
+      integrity: sha1-cVuW6phBWTzDMGeSP17GDr2k99c=
   /caseless/0.12.0:
     dev: false
     resolution:
@@ -962,6 +975,17 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-d8NrGylA5oCXSbGoKz05FkehDAzSmIm4K03S5VDh4d5lZAtTWfc3D1RuETtuQCn8129nYfJfDdF7P/lwcz1BlA==
+  /concat-stream/1.6.2:
+    dependencies:
+      buffer-from: 1.1.1
+      inherits: 2.0.3
+      readable-stream: 2.3.6
+      typedarray: 0.0.6
+    dev: false
+    engines:
+      '0': node >= 0.8
+    resolution:
+      integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==
   /content-disposition/0.5.2:
     dev: false
     engines:
@@ -1493,6 +1517,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==
+  /http-basic/2.5.1:
+    dependencies:
+      caseless: 0.11.0
+      concat-stream: 1.6.2
+      http-response-object: 1.1.0
+    dev: false
+    resolution:
+      integrity: sha1-jORHvbW2xXf4pj4/p4BW7Eu02/s=
   /http-errors/1.6.3:
     dependencies:
       depd: 1.1.2
@@ -1504,6 +1536,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-i1VoC7S+KDoLW/TqLjhYC+HZMg0=
+  /http-response-object/1.1.0:
+    dev: false
+    resolution:
+      integrity: sha1-p8TnWq6C87tJBOT0P2FWc7TVGMM=
   /http-signature/1.2.0:
     dependencies:
       assert-plus: 1.0.0
@@ -1552,6 +1588,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
+  /is-browser/2.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-F5rTJxDQ2sW81fcfOR1GnCXT6sVJC104fCyfj+mjpwNEwaPYSn5fte5jiHmBg3DHsIoL/l8Kvw5VN5SsTRcRFQ==
   /is-buffer/1.1.6:
     dev: false
     resolution:
@@ -1608,6 +1648,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
+  /isarray/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
   /isexe/2.0.0:
     dev: false
     resolution:
@@ -2268,12 +2312,22 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-qpWRvKokkj8eD0hJ0kD0fvwQdaw=
+  /process-nextick-args/2.0.0:
+    dev: false
+    resolution:
+      integrity: sha512-MtEC1TqN0EU5nephaJ4rAtThHtC86dNN9qCuEhtshvpVBkAW5ZO7BASN9REnF9eoXGcRub+pFuKEpOHE+HbEMw==
   /process/0.5.2:
     dev: false
     engines:
       node: '>= 0.6.0'
     resolution:
       integrity: sha1-FjjYqONML0QKkduVq5rrZ3/Bhc8=
+  /promise/6.1.0:
+    dependencies:
+      asap: 1.0.0
+    dev: false
+    resolution:
+      integrity: sha1-LOcp9rlLRcJoka0GAsXJDgTG7vY=
   /promise/7.3.1:
     dependencies:
       asap: 2.0.6
@@ -2391,6 +2445,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Elgg40vIQtLyqq+v5MKRbuMsFXw=
+  /readable-stream/2.3.6:
+    dependencies:
+      core-util-is: 1.0.2
+      inherits: 2.0.3
+      isarray: 1.0.0
+      process-nextick-args: 2.0.0
+      safe-buffer: 5.1.2
+      string_decoder: 1.1.1
+      util-deprecate: 1.0.2
+    dev: false
+    resolution:
+      integrity: sha512-tQtKA9WIAhBF3+VLAseyMqZeBjW0AHJoxOtYqSUZNJxauErmLbVm2FW1y+J/YA9dUrAC39ITejlZWhVIwawkKw==
   /reduce-flatten/1.0.1:
     dev: false
     engines:
@@ -2641,6 +2707,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-YuIDvEF2bGwoyfyEMB2rHFMQ+pQ=
+  /string_decoder/1.1.1:
+    dependencies:
+      safe-buffer: 5.1.2
+    dev: false
+    resolution:
+      integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
   /strip-ansi/3.0.1:
     dependencies:
       ansi-regex: 2.1.1
@@ -2677,6 +2749,24 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-uNaR3SRMJwfdp9OUr36eyEi6LLsbcTqTO/hfTsNviKsNeyMBPICJCC7QXRF3+07bAP6FRwA8rczJPBqXDc0CkQ==
+  /then-jsonp/1.0.3:
+    dependencies:
+      promise: 6.1.0
+      then-request: 2.2.0
+    dev: false
+    resolution:
+      integrity: sha1-8Mi6gfAPVbSUfqEMsh90hAqaTMY=
+  /then-request/2.2.0:
+    dependencies:
+      caseless: 0.11.0
+      concat-stream: 1.6.2
+      http-basic: 2.5.1
+      http-response-object: 1.1.0
+      promise: 7.3.1
+      qs: 6.7.0
+    dev: false
+    resolution:
+      integrity: sha1-ZnizL6DKIY/laZgbvYhxtZQGDYE=
   /through/2.3.8:
     dev: false
     resolution:
@@ -2746,6 +2836,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
+  /typedarray/0.0.6:
+    dev: false
+    resolution:
+      integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
   /typical/2.6.1:
     dev: false
     resolution:
@@ -2766,6 +2860,13 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-sr9O6FFKrmFltIF4KdIbLvSZBOw=
+  /uptime-robot/1.3.0:
+    dependencies:
+      is-browser: 2.1.0
+      then-jsonp: 1.0.3
+    dev: false
+    resolution:
+      integrity: sha1-TDC42igIGHnfj2VcYOKjHYiC4+o=
   /uri-js/4.2.2:
     dependencies:
       punycode: 2.1.1
@@ -2784,6 +2885,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-I/iQaabGL0bPOh07ABac77kL4MY=
+  /util-deprecate/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
   /utils-merge/1.0.1:
     dev: false
     engines:
@@ -2975,3 +3080,4 @@ shrinkwrapVersion: 3
 specifiers:
   botkit-discord: 0.0.6
   express: ^4.16.4
+  uptime-robot: ^1.3.0
