@@ -6,7 +6,7 @@ const express = require("express");
 const fs = require("fs");
 const discordBotkit = require("botkit-discord");
 
-var Client = require('uptime-robot');
+var Client = require("uptime-robot");
 var uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
 
 const app = express();
@@ -49,6 +49,21 @@ app.get("/monitor", function(request, response) {
   });
 });
 
+app.get("/createMonitor", function(request, response) {
+  uptimeRobot.newMonitor(
+    {
+      friendlyName: process.env.PROJECT_DOMAIN,
+      url: process.env.PROJECT_DOMAIN + ".glitch.me",
+      type: 1,
+      interval: 5
+    },
+    function(err, res) {
+      if (err) throw response.status(200).json(err);
+      response.status(200).json(res);
+    }
+  );
+});
+
 app.get("/checkinstall", function(request, response) {
   if (!process.env.DISCORD_TOKEN) {
     console.log("no token");
@@ -68,8 +83,8 @@ app.get("/checkinstall", function(request, response) {
 
     testBot.on("ready", event => {
       response.status(200).json({
-    message: "yay"
-  });
+        message: "yay"
+      });
     });
   }
 });
@@ -82,7 +97,6 @@ if (!process.env.DISCORD_TOKEN) {
   app.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/index.html");
   });
-
 }
 
 // http://expressjs.com/en/starter/basic-routing.html
