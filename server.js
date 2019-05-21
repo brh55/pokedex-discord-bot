@@ -53,7 +53,7 @@ app.get("/createMonitor", function(request, response) {
   uptimeRobot.newMonitor(
     {
       friendlyName: process.env.PROJECT_DOMAIN,
-      url: process.env.PROJECT_DOMAIN + ".glitch.me",
+      url: "https://" + process.env.PROJECT_DOMAIN + ".glitch.me",
       type: 1,
       interval: 5
     },
