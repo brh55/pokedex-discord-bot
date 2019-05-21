@@ -72,16 +72,21 @@
             >
           </legend>
           <div>
-            <input type="checkbox" id="uptime_check_1" />
-            <label for="uptime_check_1"
-              >Create an Uptime Robot Account</label
+            <input type="checkbox" id="check_1" />
+            <label for="check_1"
+              >Login to the
+              <a
+                href="https://discordapp.com/developers/applications"
+                target="new"
+                >My Applications section of the Discord Developer Portal</a
+              ></label
             >
           </div>
 
           <div>
             <input type="checkbox" id="check_2" />
             <label for="check_2"
-                   >Go to <a href="https://uptimerobot.com/dashboard#mySettings">your settings</a></label
+              >Click "New Application" to create an application</label
             >
           </div>
           <div>
@@ -138,63 +143,62 @@
         accidentally add any spaces or other characters after it because it
         won't work correctly.
       </p>
-      
-      <h2>Set up Uptime Robot</h2>
+
+      <h2>Set up Uptime Robot (OPTIONAL)</h2>
       <p>
-        Wait what's Uptime Robot??? It's a handy service that will help keep your bot running. Glitch apps automatically "sleep" after 5 minutes. <a href="https://glitch.com/help/restrictions/">You can read more about it here.</a> This means it isn't listening to Discord and your bot won't respond. There are some tools that will help your bot "wake itself up" but these stop working after 12 hours. <em>Only an external request to your bot's "site" here on Glitch will keep it running all day and all night.</em> Luckily Uptime Robot does exactly that!
+        Wait what's Uptime Robot??? It's a handy service that will help keep
+        your bot running. Glitch apps automatically "sleep" after 5 minutes.
+        <a href="https://glitch.com/help/restrictions/"
+          >You can read more about it here.</a
+        >
+        This means it isn't listening to Discord and your bot won't respond.
+        There are some tools that will help your bot "wake itself up" but these
+        stop working after 12 hours.
+        <em
+          >Only an external request to your bot's "site" here on Glitch will
+          keep it running all day and all night.</em
+        >
+        Luckily Uptime Robot does exactly that!
       </p>
       <div>
         <fieldset>
           <legend>
             Setting up Uptime Robot. Complete these at the
-            <a
-              href="https://uptimerobot.com"
-              target="new"
+            <a href="https://uptimerobot.com" target="new"
               >Uptime Robot website</a
             >
           </legend>
           <div>
-            <input type="checkbox" id="check_1" />
-            <label for="check_1"
-              >Login to the
-              <a
-                href="https://discordapp.com/developers/applications"
-                target="new"
-                >My Applications section of the Discord Developer Portal</a
-              ></label
-            >
+            <input type="checkbox" id="uptime_check_1" />
+            <label for="uptime_check_1">Create an Uptime Robot Account</label>
           </div>
 
           <div>
-            <input type="checkbox" name="register" id="check_2" />
-            <label for="check_1"
-              >Click "New Application" to create an application</label
+            <input type="checkbox" id="uptime_check_2" />
+            <label for="uptime_check_2"
+              >Go to
+              <a href="https://uptimerobot.com/dashboard#mySettings"
+                >your settings</a
+              >
+              under "Main API Key" click the button to generate an API
+              key</label
             >
           </div>
           <div>
-            <input type="checkbox" name="register" id="check_4" />
-            <label for="check_1"
-              >Click on "Bot" on the sidebar to go to the "Bot" settings
-              page</label
-            >
-          </div>
-
-          <div>
-            <input type="checkbox" name="register" id="check_5" />
-            <label for="check_1"
-              >Click the "Add bot" button on the "Bot" settings page</label
-            >
-          </div>
-
-          <div>
-            <input type="checkbox" name="register" id="check_6" />
-            <label for="check_1"
-              >You should see a "token" section. Click "copy" to copy the
-              token</label
-            >
+            <input type="checkbox" id="uptime_check_3" />
+            <label for="uptime_check_3">Copy your new API key</label>
           </div>
         </fieldset>
       </div>
+      <p>
+        <label>Uptime Robot API Key</label>
+        <input
+          id="uptimeKey"
+          class="copyurl"
+          onchange="generateEnv()"
+          placeholder="Paste your Uptime Robot API key here "
+        />
+      </p>
       <h2>Set up your .env file</h2>
 
       <div class="input">
@@ -210,9 +214,7 @@
 
       <p><a href="" id="envFileLink">Here is a link to your .env file</a></p>
       <h2>Test your .env file</h2>
-      <p>
-        Click the button below to test your <code>.env file</code>
-      </p>
+      <p>Click the button below to test your <code>.env file</code></p>
       <button id="checkInstallButton">Check Connection</button>
       <div id="connectedSection">
         <p>
@@ -237,12 +239,12 @@
           </li>
         </ul>
       </div>
-      
-            <div id="apiErrorSection">
+
+      <div id="apiErrorSection">
         <p>
-         the good news is you have a good .env file the bad news is it doesn't recognize ur token
+          the good news is you have a good .env file the bad news is it doesn't
+          recognize ur token
         </p>
-        
       </div>
     </main>
 

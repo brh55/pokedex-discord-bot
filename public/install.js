@@ -72,8 +72,9 @@ function clipboard(element) {
 
 function generateEnv() {
   let discordToken =
-    document.getElementById("discordToken").value || "<Your token value here>";
-
+    document.getElementById("discordToken").value || "discordToken";
+  let uptimeKey =
+    document.getElementById("uptimeKey").value || "uptimebotAPIKey";
   let env = `# Environment Config
 
 # store your secrets and config variables in here
@@ -82,7 +83,7 @@ function generateEnv() {
 # reference these in your code with process.env.SECRET
 
 DISCORD_TOKEN=${discordToken}
-
+UPTIME_ROBOT_KEY=${uptimeKey}
 # note: .env is a shell file so there can't be spaces around =
 `;
   document.getElementById("env_file").value = env;
