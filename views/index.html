@@ -30,7 +30,7 @@
   </head>
   <body>
     <header>
-      <h1>Setup <span id="domain-name-title"></span>!</h1>
+      <h1>Setup <span class="domain-name-title"></span>!</h1>
     </header>
 
     <main>
@@ -61,12 +61,16 @@
         Oops looks like there is no Uptime Robot api key, you can head to the install guide to learn how to set it up
       </div>
       <div id="uptime-not-set-up">
-        Looks like Uptime Robot hasn't been set up yet. Click to set up with the following recommended settings
+        Looks like Uptime Robot hasn't been set up yet. Click to set up up a monitor automagically with the following recommended settings
         <ul>
           <li>Monitor type: HTTP(s)</li>
-          <li>Friendly Name: </li>
+          <li>Friendly Name: <span class="domain-name-title"></span></li>
+          <li>URL: https://<span class="domain-name-title"></span>.glitch.me</li>
+          <li>Monitoring Interval: Every 5 minutes</li>
+
         </ul>
-        
+                  <button onclick="monitorSetup()">Create my Uptime Robot monitor!</button>
+
         
       </div>
       <div id="uptime-working">

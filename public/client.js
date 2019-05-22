@@ -1,7 +1,7 @@
 let domainName;
 let authUrl;
 let addBotLink;
-const domainNameTitle = document.getElementById("domain-name-title");
+const domainNameTitle = document.getElementsByClassName("domain-name-title");
 const addBotCopy = document.getElementById("add-bot-link");
 
 const oauthUrl = document.getElementById("oauth-url");
@@ -34,7 +34,10 @@ function getDomain() {
         authUrl = resJson.url;
 
         console.log("domain name " + domainName);
-        domainNameTitle.innerHTML = domainName;
+        [...domainNameTitle].forEach(function(element) {
+          element.innerHTML = domainName;
+        });
+
         console.log(resJson);
         if (authUrl) {
           oauthUrl.value = authUrl;
