@@ -14,6 +14,15 @@ noClientFound.style.display = "none";
 const clientFound = document.getElementById("client-found");
 clientFound.style.display = "none";
 
+const uptimeNotFound = document.getElementById("uptime-not-found");
+noClientFound.style.display = "none";
+
+const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
+uptimeNotSetUp.style.display = "none";
+
+const uptimeWorking = document.getElementById("uptime-working");
+uptimeNotSetUp.style.display = "none";
+
 
 function getDomain() {
   console.log("test");
