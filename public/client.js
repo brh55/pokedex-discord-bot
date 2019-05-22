@@ -4,7 +4,6 @@ let addBotLink;
 const domainNameTitle = document.getElementById("domain-name-title");
 const addBotCopy = document.getElementById("add-bot-link");
 
-
 const oauthUrl = document.getElementById("oauth-url");
 const oauthUrlGo = document.getElementById("oauth-url-go");
 
@@ -15,14 +14,13 @@ const clientFound = document.getElementById("client-found");
 clientFound.style.display = "none";
 
 const uptimeNotFound = document.getElementById("uptime-not-found");
-noClientFound.style.display = "none";
+uptimeNotFound.style.display = "none";
 
 const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
 uptimeNotSetUp.style.display = "none";
 
 const uptimeWorking = document.getElementById("uptime-working");
-uptimeNotSetUp.style.display = "none";
-
+uptimeWorking.style.display = "none";
 
 function getDomain() {
   console.log("test");
@@ -37,19 +35,22 @@ function getDomain() {
 
         console.log("domain name " + domainName);
         domainNameTitle.innerHTML = domainName;
-        console.log(resJson)
+        console.log(resJson);
         if (authUrl) {
           oauthUrl.value = authUrl;
-          oauthUrlGo.href= authUrl;
+          oauthUrlGo.href = authUrl;
           clientFound.style.display = "block";
-
         } else {
-          
           noClientFound.style.display = "block";
-
-        
         }
 
+        if (resJson.uptimeRobotApiKey && resJson.uptimeRobotMonitor) {
+          uptimeWorking.style.display = "block";
+        } else if (resJson.uptimeRobotApiKey) {
+          uptimeNotSetUp.style.display = "block";
+        } else {
+          uptimeNotFound.style.display = "block";
+        }
       }
       return Promise.resolve();
     });
@@ -74,5 +75,3 @@ getDomain();
 
 
 setInterval(monitor, 60 * 1000);*/
-
-
