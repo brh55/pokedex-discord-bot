@@ -7,7 +7,6 @@ const fs = require("fs");
 const discordBotkit = require("botkit-discord");
 
 var Client = require("uptime-robot");
-var uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
 
 const app = express();
 const discordBot = require("./bot");
@@ -43,9 +42,29 @@ app.get("/botinfo", function(request, response) {
 });
 
 app.get("/monitor", function(request, response) {
-  let uptime = process.uptime();
+  /* let uptime = process.uptime();
   response.status(200).json({
     message: uptime
+  });*/
+try {
+  var uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
+
+
+  uptimeRobot.getMonitors({}, function(err, monitors) {
+    if (err) throw response.status(200).json(err);
+    let setup = false;
+    monitors.forEach(function(monitor) {
+      if (
+        monitor.url ==
+        "https://" + process.env.PROJECT_DOMAIN + ".glitch.me"
+      ) {
+        setup = true;
+      }
+    });
+
+    response.status(200).json({
+      status: setup
+    });
   });
 });
 
