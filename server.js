@@ -34,10 +34,38 @@ app.get("/domainname", function(request, response) {
 app.get("/botinfo", function(request, response) {
   let authURL = discordBot.config.client.inviteURL;
   let domain = process.env.PROJECT_DOMAIN;
+  let uptime = process.uptime();
+  let uptimeRobotApiKey = false;
+  let uptimeRobotMonitor = false;
+  
+    try {
+    const uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
+      
+    uptimeRobot.getMonitors({}, function(err, monitors) {
+      console.log(err)
+      uptimeRobotApiKey = true;
+      let setup = 1;
+      monitors.forEach(function(monitor) {
+        if (
+          monitor.url ==
+          "https://" + process.env.PROJECT_DOMAIN + ".glitch.me"
+        ) {
+          uptimeRobotMonitor = true;
+        }
+      });
+
+    });
+  } catch (error) {
+    console.log("error");
+ 
+  }
 
   response.status(200).json({
     url: authURL,
-    domain: domain
+    domain: domain,
+    uptime: uptime,
+    uptimeRobotApiKey: uptimeRobotApiKey,
+    uptimeRobotMonitor: uptimeRobotMonitor
   });
 });
 
@@ -48,7 +76,7 @@ app.get("/monitor", function(request, response) {
     message: uptime
   });*/
   try {
-    var uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
+    const uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
     uptimeRobot.getMonitors({}, function(err, monitors) {
       if (err) throw response.status(200).json(err);
       let setup = 1;
@@ -77,7 +105,7 @@ app.get("/monitor", function(request, response) {
 });
 
 app.get("/createMonitor", function(request, response) {
-  var uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
+  const uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
 
   uptimeRobot.newMonitor(
     {
