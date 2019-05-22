@@ -17,7 +17,7 @@ const uptimeNotFound = document.getElementById("uptime-not-found");
 uptimeNotFound.style.display = "none";
 
 const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
-uptimeNotSetUp.style.display = "none";
+//uptimeNotSetUp.style.display = "none";
 
 const uptimeWorking = document.getElementById("uptime-working");
 uptimeWorking.style.display = "none";
