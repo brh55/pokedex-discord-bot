@@ -35,16 +35,17 @@ app.get("/botinfo", async function(request, response) {
   let authURL = discordBot.config.client.inviteURL;
   let domain = process.env.PROJECT_DOMAIN;
   let uptime = process.uptime();
+  let uptimeRobot;
   let uptimeRobotApiKey = false;
   let uptimeRobotMonitor = false;
   
    try {
-    let num = await promise13();
-    console.log('num', num);
+     uptimeRobot =  await new Client(process.env.UPTIME_ROBOT_KEY);
+uptimeRobotApiKey = true;
+    
   } catch(e) {
     console.log('Error caught');
   }
-      const uptimeRobot =   await new Client(process.env.UPTIME_ROBOT_KEY);
       
   let monitors = await uptimeRobot.getMonitors();
 
@@ -57,32 +58,9 @@ app.get("/botinfo", async function(request, response) {
         }
       });
 
-      console.log("uptimeRobotApiKey", uptimeRobotApiKey)
-        console.log("uptimeRobotMonitor", uptimeRobotMonitor)
-  /*try {
-    const uptimeRobot = await new Client(process.env.UPTIME_ROBOT_KEY);
-      
-   await uptimeRobot.getMonitors({}, function(err, monitors) {
-      console.log(monitors)
-      uptimeRobotApiKey = true;
-      let setup = 1;
-      monitors.forEach(function(monitor) {
-        if (
-          monitor.url ==
-          "https://" + process.env.PROJECT_DOMAIN + ".glitch.me"
-        ) {
-          uptimeRobotMonitor = true;
-        }
-      });
+  console.log("uptimeRobotApiKey", uptimeRobotApiKey)
+  console.log("uptimeRobotMonitor", uptimeRobotMonitor)
 
-    });
-    console.log("uptimeRobotApiKey", uptimeRobotApiKey)
-        console.log("uptimeRobotMonitor", uptimeRobotMonitor)
-
-  } catch (error) {
-    console.log("error");
- 
-  }*/
 
   response.status(200).json({
     url: authURL,
