@@ -61,9 +61,9 @@ function getDomain() {
 
 getDomain();
 
-/*function monitor(){
+function monitorSetup(){
   console.log("test");
- return fetch("/monitor/")
+ return fetch("/createMonitor")
     .then(res => res.json())
     .then(resJson => {
       if (resJson.error) {
@@ -77,4 +77,3 @@ getDomain();
 }
 
 
-setInterval(monitor, 60 * 1000);*/
