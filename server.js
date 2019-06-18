@@ -11,11 +11,15 @@ var Client = require("uptime-robot");
 const app = express();
 const discordBot = require("./bot");
 
+
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static("public"));
+
+
+/* This section of code is used by the install and setup guides, you may delete or modify it without breaking your bot once your bot is up and working */
 app.get("/guide", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
@@ -151,6 +155,9 @@ if (!process.env.DISCORD_TOKEN) {
     response.sendFile(__dirname + "/views/index.html");
   });
 }
+
+
+/
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
