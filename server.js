@@ -38,29 +38,24 @@ app.get("/botinfo", async function(request, response) {
   let uptimeRobot;
   let uptimeRobotApiKey = false;
   let uptimeRobotMonitor = false;
-  
-   try {
-     uptimeRobot =  await new Client(process.env.UPTIME_ROBOT_KEY);
-uptimeRobotApiKey = true;
-    
-  } catch(e) {
-    console.log('Error caught');
+
+  try {
+    uptimeRobot = await new Client(process.env.UPTIME_ROBOT_KEY);
+    uptimeRobotApiKey = true;
+  } catch (e) {
+    console.log("Error caught");
   }
-      
+
   let monitors = await uptimeRobot.getMonitors();
 
-    monitors.forEach(function(monitor) {
-        if (
-          monitor.url ==
-          "https://" + process.env.PROJECT_DOMAIN + ".glitch.me"
-        ) {
-          uptimeRobotMonitor = true;
-        }
-      });
+  monitors.forEach(function(monitor) {
+    if (monitor.url == "https://" + process.env.PROJECT_DOMAIN + ".glitch.me") {
+      uptimeRobotMonitor = true;
+    }
+  });
 
-  console.log("uptimeRobotApiKey", uptimeRobotApiKey)
-  console.log("uptimeRobotMonitor", uptimeRobotMonitor)
-
+  console.log("uptimeRobotApiKey", uptimeRobotApiKey);
+  console.log("uptimeRobotMonitor", uptimeRobotMonitor);
 
   response.status(200).json({
     url: authURL,
@@ -94,7 +89,6 @@ app.get("/monitor", function(request, response) {
       response.status(200).json({
         status: setup,
         uptime: uptime
-
       });
     });
   } catch (error) {
@@ -157,11 +151,6 @@ if (!process.env.DISCORD_TOKEN) {
     response.sendFile(__dirname + "/views/index.html");
   });
 }
-
-// http://expressjs.com/en/starter/basic-routing.html
-/*app.get('/', function(request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});*/
 
 // listen for requests :)
 const listener = app.listen(process.env.PORT, function() {
