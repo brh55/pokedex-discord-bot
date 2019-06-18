@@ -1,3 +1,2 @@
-# TODO
-- interactive tutorial
-- once set up turns into status page
+## Starter Botkit Discord
+Starter Botkit Discord is a Discord bot with an interactive guide 
