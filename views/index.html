@@ -35,14 +35,22 @@
 
     <main>
       <p>
-        Hooray! You've finished the <a href="/install">install guide</a> and are reading to start setting your bot up.
+        Hooray! You've finished the <a href="/install">install guide</a> and are
+        reading to start setting your bot up.
       </p>
       <h2>Add your bot to a server</h2>
       <p>
-        You have to have a server to add your bot to and you have to have admin permissions. <a href="https://support.discordapp.com/hc/en-us/articles/204849977-How-do-I-create-a-server-">If you don't have one already, here is how you make one.</a>
+        You have to have a server to add your bot to and you have to have admin
+        permissions.
+        <a
+          href="https://support.discordapp.com/hc/en-us/articles/204849977-How-do-I-create-a-server-"
+          >If you don't have one already, here is how you make one.</a
+        >
       </p>
-<p>
-  There are several ways to add a Discord bot to the server. For this one we'll use Oauth2, which allows you to use a link that authorizes your bot to a specific server. Read more here. 
+      <p>
+        There are several ways to add a Discord bot to the server. For this one
+        we'll use Oauth2, which allows you to use a link that authorizes your
+        bot to a specific server. Read more here.
       </p>
       <div id="no-client-found">
         Oops looks like there is something wrong with your install. Check out
@@ -54,41 +62,46 @@
         <div class="addon">
           <input readonly class="copyurl" id="oauth-url" type="text" value="" />
           <button onclick="clipboard('oauth-url')">Copy</button>
-          
+
           <a href="" id="oauth-url-go" class="button" target="new">Go</a>
         </div>
       </div>
-      
+
       <h2>Keep your bot awake</h2>
       <div id="uptime-not-found">
-        Oops looks like there is no Uptime Robot api key, you can head to the install guide to learn how to set it up
+        Oops looks like there is no Uptime Robot api key, you can head to the
+        install guide to learn how to set it up
       </div>
       <div id="uptime-not-set-up">
-        Looks like Uptime Robot hasn't been set up yet. Click to set up up a monitor automagically with the following recommended settings
+        Looks like Uptime Robot hasn't been set up yet. Click to set up up a
+        monitor automagically with the following recommended settings
         <ul>
           <li>Monitor type: HTTP(s)</li>
           <li>Friendly Name: <span class="domain-name-title"></span></li>
-          <li>URL: https://<span class="domain-name-title"></span>.glitch.me</li>
+          <li>
+            URL: https://<span class="domain-name-title"></span>.glitch.me
+          </li>
           <li>Monitoring Interval: Every 5 minutes</li>
-
         </ul>
-                  <button onclick="monitorSetup()">Create my Uptime Robot monitor!</button>
-
-        
+        <button onclick="monitorSetup()" id="uptime-robot-button">
+          Create my Uptime Robot monitor!
+        </button>
       </div>
       <div id="uptime-working">
-        Sweet, your Uptime Robot is set up and working, it will ping your domain every 5 minutes to keep your Discord bot awake! <a href="https://uptimerobot.com/dashboard#">Head to the Uptime Robot Dashboard to see its status</a>
+        Sweet, your Uptime Robot is set up and working, it will ping your domain
+        every 5 minutes to keep your Discord bot awake!
+        <a href="https://uptimerobot.com/dashboard#"
+          >Head to the Uptime Robot Dashboard to see its status</a
+        >
       </div>
 
-
       <h2>Code your bot!</h2>
-      <p>
-        
+      <p>This bot is built with <a href="https://www.npmjs.com/package/botkit-discord">BotKit Discord</a>, which combines the power of <a href="https://discord.js.org/">Discord.js</a> with <a href="https://botkit.ai/">Botkit</a>. Discord.js is the most popular way to connect node.js apps (like this one!) with the Discord API. Botkit is a hugely useful framework for bot building. 
+      
+      
       </p>
 
       <h2>Protect your bot</h2>
-
-      <h2>Keep your bot awake</h2>
 
       <h2>Give your bot a memory</h2>
     </main>

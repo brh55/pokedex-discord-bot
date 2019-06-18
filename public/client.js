@@ -22,6 +22,9 @@ const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
 const uptimeWorking = document.getElementById("uptime-working");
 uptimeWorking.style.display = "none";
 
+const uptimeButton = document.getElementById("uptime-robot-button");
+uptimeButton.style.display = "none";
+
 function getDomain() {
   console.log("test");
   return fetch("/botinfo/")
@@ -51,6 +54,7 @@ function getDomain() {
           uptimeWorking.style.display = "block";
         } else if (resJson.uptimeRobotApiKey) {
           uptimeNotSetUp.style.display = "block";
+          uptimeButton.style.display = "block";
         } else {
           uptimeNotFound.style.display = "block";
         }
@@ -61,19 +65,16 @@ function getDomain() {
 
 getDomain();
 
-function monitorSetup(){
+function monitorSetup() {
   console.log("test");
- return fetch("/createMonitor")
+  return fetch("/createMonitor")
     .then(res => res.json())
     .then(resJson => {
       if (resJson.error) {
-                console.log(resJson.error);
-
+        console.log(resJson.error);
       } else {
         console.log(resJson.message);
       }
       return Promise.resolve();
     });
 }
-
-
