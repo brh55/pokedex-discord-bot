@@ -34,6 +34,9 @@ This is the basic webpage for the install guide
 ### .env
 This is a file for storing secure info like API keys
 
+## bot.js
+This is the base code initializing the bot by giving it to the Discord Api key and telling it where the skills files are
+
 ### package.json
 This is a file that contains info about your project, like what [node modules it should install](https://glitch.com/help/how-do-i-add-an-npm-module-package-to-my-project/)
 
@@ -41,7 +44,7 @@ This is a file that contains info about your project, like what [node modules it
 This is this file! It's full of helpful info.
 
 ## server.js
-This contains the code connecting your app to Discord, Uptime Robot, and for hosting the guides
+This contains the code that connects all the different pieces of the bot together so it can be started by package.json
 
 ## Get Started
 Remix this app and click show! The install guide will walk you all the steps needed.

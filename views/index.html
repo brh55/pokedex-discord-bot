@@ -97,11 +97,18 @@
 
       <h2>Code your bot!</h2>
       <p>This bot is built with <a href="https://www.npmjs.com/package/botkit-discord">BotKit Discord</a>, which combines the power of <a href="https://discord.js.org/">Discord.js</a> with <a href="https://botkit.ai/">Botkit</a>. Discord.js is the most popular way to connect node.js apps (like this one!) with the Discord API. Botkit is a hugely useful framework for bot building. You can use either one to make your bot interactive.
-      
-      
+    
       </p>
 
       <h2>Protect your bot</h2>
+      <p>
+        Here are some tips for keeping your bot secure:
+      </p>
+      <ul>
+        <li>NEVER share your Discord API token or put it anywhere else but .env</li>
+        <li>If you add <a href="https://glitch.com/help/how-do-i-invite-collaborators-to-edit-my-project/">collaborators</a> to your project they will be able to see your .env. If for some reason you remove a collaborator, you should also reset your Discord API token by going to <a href="https://discordapp.com/developers/applications">The Discord Developer portal</a>, clicking on the bot's application, heading to the "bot" section and clicking "regenerate".</li>
+        <li>Collaboraters are able to copy your project</li>
+      </ul>
 
       <h2>Give your bot a memory</h2>
     </main>
