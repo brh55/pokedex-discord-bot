@@ -96,8 +96,16 @@
       </div>
 
       <h2>Code your bot!</h2>
-      <p>This bot is built with <a href="https://www.npmjs.com/package/botkit-discord">BotKit Discord</a>, which combines the power of <a href="https://discord.js.org/">Discord.js</a> with <a href="https://botkit.ai/">Botkit</a>. Discord.js is the most popular way to connect node.js apps (like this one!) with the Discord API. Botkit is a hugely useful framework for bot building. You can use either one to make your bot interactive.
-    
+      <p>This bot is built with <a href="hhttps://github.com/brh55/botkit-discord">BotKit Discord</a>, which combines the power of <a href="https://discord.js.org/">Discord.js</a> with <a href="https://botkit.ai/">Botkit</a>. Discord.js is the most popular way to connect node.js apps (like this one!) with the Discord API. Botkit is a hugely useful framework for bot building. You can use either one build on your bot.</p>
+      <p>
+        We've started you off with a Botkit "skill" you can find in <em>skills/hears.js</em>. This skill is triggered someone sends a message starting with !thanks. You can find some more useful skill code in the <a href="hhttps://github.com/brh55/botkit-discord">BotKit Discord</a> Readme. 
+      </p>
+      
+      <h2>
+        Give your bot a memory
+      </h2>
+      <p>
+        You may notice a message saying <code>info: ** No persistent storage method specified! Data may be lost when process shuts down.</code> in the logs. This means that whatever anyone tells the bot, the bot Glitch app doesn't remember. It doesn't save any data about messages. You may want to save data, for example if you want to build a system that stores a record of people who have been thanked by the bot. 
       </p>
 
       <h2>Protect your bot</h2>
@@ -106,11 +114,12 @@
       </p>
       <ul>
         <li>NEVER share your Discord API token or put it anywhere else but .env</li>
-        <li>If you add <a href="https://glitch.com/help/how-do-i-invite-collaborators-to-edit-my-project/">collaborators</a> to your project they will be able to see your .env. If for some reason you remove a collaborator, you should also reset your Discord API token by going to <a href="https://discordapp.com/developers/applications">The Discord Developer portal</a>, clicking on the bot's application, heading to the "bot" section and clicking "regenerate".</li>
-        <li>Collaboraters are able to copy your project</li>
+        <li>Your code is public (anyone can see and copy it), unless you make your Glitch app <a href="https://glitch.com/help/privateproject/">private</a>.</li>
+        <li>If you add <a href="https://glitch.com/help/how-do-i-invite-collaborators-to-edit-my-project/">collaborators</a> to your project they will be able to see your .env and copy the code. </li>
+          <li>If for some reason you remove a collaborator or accidentally share your token, you should also reset your Discord API token by going to <a href="https://discordapp.com/developers/applications">The Discord Developer portal</a>, clicking on the bot's application, heading to the "bot" section and clicking "regenerate".</li>
+  
       </ul>
 
-      <h2>Give your bot a memory</h2>
     </main>
 
     <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
