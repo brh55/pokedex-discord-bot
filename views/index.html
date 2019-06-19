@@ -107,6 +107,13 @@
       <p>
         You may notice a message saying <code>info: ** No persistent storage method specified! Data may be lost when process shuts down.</code> in the logs. This means that whatever anyone tells the bot, the bot Glitch app doesn't remember. It doesn't save any data about messages. You may want to save data, for example if you want to build a system that stores a record of people who have been thanked by the bot. 
       </p>
+      <p>
+        <a href="https://botkit.ai/docs/v0/storage.html">You can use the Botkit default storage as shown here</a>. It uses a special kind of file called a .json file. You can see an example in storage.js. The important thing is the file is stored in .data. .data is never shown in the Glitch editor. The reason why is that editing files used as databases in the Glitch editor can corrupt them. If you want to interact with them you'll need to use code or the <a href="">console/terminal</a>. Also files in .data are NOT backed up and .json files can be corrupted if there are multiple database actions at the same time.</p>
+        <p>
+          
+      For this reason I recommend using a seperate site for storage like Firebase. It has a user friendly interface for browsing the data and is automatically backed up. Example code is in storage.js. 
+      </p>
+
 
       <h2>Protect your bot</h2>
       <p>
