@@ -140,7 +140,7 @@
         You should put your token after <code>DISCORD_TOKEN=</code>. So if your
         token is <code>ewriewirew438234adadfs</code> it will look like
         <code>DISCORD_TOKEN=ewriewirew438234adadfs</code>. Make sure you don't
-        accidentally add any spaces or other characters after it because it
+        accidentally add any spaces or other characters around it because it
         won't work correctly.
       </p>
 
@@ -149,11 +149,13 @@
         Wait what's Uptime Robot??? It's a handy service that will help keep
         your bot running. Glitch apps automatically "sleep" after 5 minutes.
         <a href="https://glitch.com/help/restrictions/"
-          >You can read more about it here.</a
+          >You can read more about that and other restrictions here.</a
         >
-        This means it isn't listening to Discord and your bot won't respond.
-        There are some tools that will help your bot "wake itself up" but these
-        stop working after 12 hours.
+        While your bot's asleep it isn't listening to Discord and will drop out
+        of any servers it's in. It won't be able to respond to anything. Only an
+        external service will be able to keep your bot up 24/7; solutions that
+        just use code running in Glitch won't start your bot up after the
+        12-hour shut down. Luckily Uptime Robot does exactly that!
         <em
           >Only an external request to your bot's "site" here on Glitch will
           keep it running all day and all night.</em
@@ -203,8 +205,7 @@
 
       <div class="input">
         <label
-          >This is what your .env file should be like, you can copy and
-          replace</label
+          >This is what should be in your <code>.env</code> file. You can copy this text and replace the current contents with this.</label
         >
         <div class="addon">
           <textarea rows="20" class="copyurl" id="env_file"></textarea>
@@ -212,9 +213,9 @@
         </div>
       </div>
 
-      <p><a href="" id="envFileLink">Here is a link to your .env file</a></p>
+      <p><a href="" id="envFileLink" target="editit">Here is a link to your <code>.env</code> file</a></p>
       <h2>Test your .env file</h2>
-      <p>Click the button below to test your <code>.env file</code></p>
+      <p>Click the button below to test your <code>.env</code> file</p>
       <button id="checkInstallButton">Check Connection</button>
       <div id="connectedSection">
         <p>
