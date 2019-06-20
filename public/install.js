@@ -18,6 +18,10 @@ const projectURL = document.getElementById("project_url");
 
 let domainName = "";
 
+const remixMe = document.getElementById("remix-me");
+remixMe.style.display = "none";
+
+
 function checkInstall() {
   console.log("test");
   return fetch("/checkinstall/")
@@ -54,6 +58,11 @@ function getDomain() {
         console.log(resJson.message);
         domainName = resJson.message;
         console.log("domain name " + domainName);
+        if(domainName == "starter-botkit-discord"){
+          console.log("starter botkit")
+           remixMe.style.display = "block";
+
+        }
         projectURL.value = "https://" + domainName + ".glitch.me";
         envFileLink.href =
           "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
