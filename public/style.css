@@ -15,7 +15,7 @@ body {
   
 }
 
-p, code, li {
+p, code{
     font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
 
   
@@ -23,11 +23,22 @@ p, code, li {
 
 section {
   margin-top: 2.5rem;
-  
 }
 
 .checklist {
   margin: 2em 0;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 2rem 0.5rem;
+    padding: 0;
+  }
+
+
+  .message-list > .message > .nes-balloon {
+    max-width: 60%;
+  }
 }
 
 /* Balloons sample */

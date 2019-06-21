@@ -105,19 +105,16 @@
                 >
               </span>
             </label>
-            
+
             <label>
               <input type="checkbox" class="nes-checkbox" />
-              <span>
-                Click "New Application" to create an application
-              </span>
+              <span> Click "New Application" to create an application </span>
             </label>
-            
+
             <label>
               <input type="checkbox" class="nes-checkbox" />
               <span>
-                Click on "Bot" on the sidebar to go to the "Bot" settings
-              page
+                Click on "Bot" on the sidebar to go to the "Bot" settings page
               </span>
             </label>
             <label>
@@ -129,45 +126,42 @@
             <label>
               <input type="checkbox" class="nes-checkbox" />
               <span>
-                You should see a "token" section. Click "copy" to copy the
-              token
+                You should see a "token" section. Click "copy" to copy the token
               </span>
             </label>
           </div>
         </div>
       </section>
       <section>
-          <div class="nes-container is-light with-title">
-            <h2 class="title">Discord tokens </h2>
-        </div>
-        <div class="nes-field">
-          <label>Token</label>
-        <input
-          id="discordToken"
-          class="copyurl"
-          onchange="generateEnv()"
-          placeholder="Paste your token here "
-        />
-  <label>Your name</label>
-  <input type="text" id="name_field" class="nes-input">
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Discord tokens</h2>
+          <div class="nes-field">
+            <label>Token</label>
+            <input
+              id="discordToken"
+              class="copyurl nes-input"
+              onchange="generateEnv()"
+              placeholder="Paste your token here "
+            />
+          </div>
+          <br />
+          <div  class="nes-badge">
+              <span class="is-warning">Warning!</span>
+          </div>
+                <div class="lists">
+  <ul class="nes-list is-circle">
+    <li>A token is a secret password</li>
+    <li>It can be used to hack your bot!</li>
+    <li>ONLY put it in a special file called .env</li>
+    <li>Good night.</li>
+  </ul>
 </div>
+        </div>
+  
       </section>
-      
 
-      <h2>Discord tokens</h2>
       <p>
-        <label>Token</label>
-        <input
-          id="discordToken"
-          class="copyurl"
-          onchange="generateEnv()"
-          placeholder="Paste your token here "
-        />
-      </p>
-      <p>
-        A token is a password, which means you want to keep it secure. If
-        someone else gets it, they use it to pretend to be your Discord Bot and
-        do bad things! You don't want it in <code>server.js </code> because by
+         You don't want it in <code>server.js </code> because by
         default in Glitch anyone can see that file. And if you copy the project,
         it will copy the file with the secure token.
       </p>
