@@ -35,7 +35,9 @@ section {
 
 }
 
-
+.info-box {
+  margin: 1em 0; 
+}
 
 /* Balloons sample */
 section.message-list {

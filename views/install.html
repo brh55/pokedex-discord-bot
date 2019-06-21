@@ -10,7 +10,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Welcome to Glitch!</title>
+    <title>Starter Botkit Discord Install Guide</title>
     <meta name="description" content="A cool thing made with Glitch" />
     <link
       id="favicon"
@@ -37,7 +37,7 @@
     <script src="/install.js" defer></script>
   </head>
   <body>
-    <header><h1>Starter Botkit Discord</h1></header>
+    <header><h1>Starter Botkit Discord Install Guide</h1></header>
 
     <main>
       <section>
@@ -169,15 +169,14 @@
               </div>
             </div>
             <br />
-          <div class="nes-container is-rounded is-dark with-title">
-            <div class="title">Info</div>
-                     <p>
-              You don't want it in <code>server.js </code> because by default in
-              Glitch anyone can see that file. And if you copy the project, it
-              will copy the file with the secure token.
-            </p>
-          </div>
-   
+            <div class="nes-container is-rounded is-dark with-title">
+              <div class="title">Info</div>
+              <p>
+                You don't want it in <code>server.js </code> because by default
+                in Glitch anyone can see that file. And if you copy the project,
+                it will copy the file with the secure token.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -280,77 +279,92 @@
       </section>
 
       <section>
-                <div class="nes-container  with-title">
-                          <h2 class="title">Set up your .env file</h2>
-<p class="nes-text is-primary">We're almost there!</p>
-                  <progress class="nes-progress is-primary" value="80" max="100"></progress>
-                         <div class="input">
-        <label for="env_file">This is what should be in your <code>.env</code> file. You can copy
-          this text and replace the current contents with this.</label
-        >
-        <div class="addon">
-          <textarea rows="20" class="copyurl nes-textarea" id="env_file"></textarea>
-          <button class="textarea nes-btn" onclick="clipboard('env_file')" >Copy</button>
+        <div class="nes-container  with-title">
+          <h2 class="title">Set up your .env file</h2>
+          <p class="nes-text is-primary">We're almost there!</p>
+          <progress
+            class="nes-progress is-primary"
+            value="80"
+            max="100"
+          ></progress>
+          <div class="input">
+            <label for="env_file"
+              >This is what should be in your <code>.env</code> file. You can
+              copy this text and replace the current contents with this.</label
+            >
+            <div class="addon">
+              <textarea
+                rows="20"
+                class="copyurl nes-textarea"
+                id="env_file"
+              ></textarea>
+              <button class="textarea nes-btn" onclick="clipboard('env_file')">
+                Copy
+              </button>
+            </div>
+          </div>
+          <i class="nes-octocat animate"></i> <br />
+          <p>
+            <a href="" id="envFileLink" target="editit" class="nes-btn">
+              <i class="nes-icon is-small star"></i> Click here to go to your
+              <code>.env</code> file <i class="nes-icon is-small star"></i>
+            </a>
+          </p>
         </div>
-      </div>
-                    <i class="nes-octocat animate"></i>
-                <br/>   
-                  <p>
-        <a href="" id="envFileLink" target="editit" class="nes-btn">
-          <i class="nes-icon is-small star"></i>        
-Click here to go to your <code>.env</code> file        <i class="nes-icon is-small star"></i> </a>
-   
-      </p>  
-        </div>
-        
-       
       </section>
 
-<section>
-          <div class="nes-container  with-title">
-      <h2 class="title">Test your .env file</h2>
-      <p>Click the button to see if your .env is set up right!</p>
-                  <button id="checkInstallButton" class="nes-btn">Check Connection</button>
-  </div>
-        <div id="connectedSection"  class="nes-container is-rounded">
-            <i class="nes-icon trophy is-large"></i>
-        <p>
-          Looks like your token is working! Click the refresh button to refresh
-          the page and see further steps for building your bot:
-        </p>
-        <button id="refreshPageButton" class="nes-btn is-primary">Refresh!</button>
-      </div>
-
-      <div id="errorSection" class="nes-container is-rounded">
-        <p>
-          Oops look's like there might be something wrong with your
-          <code>.env</code> file. Check it out and then try again.
-        </p>
-        <h3>Common issues</h3>
-        <ul class="nes-list is-disc">
-          <li>Spaces between <code>=</code> and the token</li>
-          <li>Spaces after the token</li>
-          <li>
-            Adding the text from the generator above to the file instead of
-            replacing the old text
-          </li>
-        </ul>
-      </div>
-
-      <div id="apiErrorSection">
-        <p>
-          the good news is you have a good .env file the bad news is it doesn't recognize your token. Head to the   <a
+      <section>
+        <div class="nes-container  with-title">
+          <h2 class="title">Test your .env file</h2>
+          <p>Click the button to see if your .env is set up right!</p>
+          <button id="checkInstallButton" class="nes-btn">
+            Check Connection
+          </button>
+          <div class="info-box">
+            <div id="connectedSection" class="nes-container is-rounded">
+              <i class="nes-icon trophy is-large"></i>
+              <p>
+                Looks like your token is working! Click the refresh button to
+                refresh the page and see further steps for building your bot:
+              </p>
+              <button id="refreshPageButton" class="nes-btn is-primary">
+                Refresh!
+              </button>
+            </div>
+          </div>
+          <div class="info-box">
+            <div id="errorSection" class="nes-container is-rounded">
+              <p>
+                Oops look's like there might be something wrong with your
+                <code>.env</code> file. Check it out and then try again.
+              </p>
+              <h3>Common issues</h3>
+              <ul class="nes-list is-disc">
+                <li>Spaces between <code>=</code> and the token</li>
+                <li>Spaces after the token</li>
+                <li>
+                  Adding the text from the generator above to the file instead
+                  of replacing the old text
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-box">
+            <div id="apiErrorSection" class="nes-container is-rounded">
+              <p>
+                the good news is you have a good .env file the bad news is it
+                doesn't recognize your token. Head to the
+                <a
                   href="https://discordapp.com/developers/applications"
                   target="new"
-                  >Discord Developer Portal </a
-                > to make sure you have the right one
-        </p>
-      </div>
+                  >Discord Developer Portal
+                </a>
+                to make sure you have the right one
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
-
-
-
-
     </main>
 
     <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
