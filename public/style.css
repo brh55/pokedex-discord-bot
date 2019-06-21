@@ -35,8 +35,12 @@ section {
 
 }
 
-.info-box {
+.info-box{
   margin: 1em 0; 
+}
+
+.buttons {
+  margin: .5em 0;
 }
 
 /* Balloons sample */

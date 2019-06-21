@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- import the webpage's stylesheet -->
-        <link
+    <link
       href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css"
       rel="stylesheet"
     />
@@ -43,116 +43,173 @@
 
     <main>
       <section>
-           <div class="nes-balloon from-left">
-       <p>
-        Hooray! You've finished the <a href="/install">install guide</a> and are
-        reading to start setting your bot up.
-      </p>
-    </div>
+        <div class="nes-balloon from-left">
+          <p>
+            Hooray! You've finished the <a href="/install">install guide</a> and
+            are reading to start setting your bot up.
+          </p>
+        </div>
       </section>
       <section>
         <div class="nes-container is-light with-title">
-            <h2 class="title">Add your bot to a Discord server</h2>
+          <h2 class="title">Add your bot to a Discord server</h2>
           <p>
-            You can add your bot to any Discord server as long as you have the <a href="https://support.discordapp.com/hc/en-us/articles/214836687-Role-Management-101" target="new">"Manage Server"</a> permission. If you create your own server you'll automatically have this!  <a
-          href="https://support.discordapp.com/hc/en-us/articles/204849977-How-do-I-create-a-server-"
-           target="new">Click here to learn how.</a
-        > 
+            You can add your bot to any Discord server as long as you have the
+            <a
+              href="https://support.discordapp.com/hc/en-us/articles/214836687-Role-Management-101"
+              target="new"
+              >"Manage Server"</a
+            >
+            permission. If you create your own server you'll automatically have
+            this!
+            <a
+              href="https://support.discordapp.com/hc/en-us/articles/204849977-How-do-I-create-a-server-"
+              target="new"
+              >Click here to learn how.</a
+            >
           </p>
           <div class="info-box">
-               <div id="no-client-found" class="nes-container is-rounded">
-                 <div class="nes-badge">
-  <span class="is-error">error</span>
-</div>
-        Oops looks like there is something wrong with your install. Check out
-        the <a href="/install">Install guide to get it set up</a>
-      </div>
-          </div>  
-                  <div id="client-found">
-                    <h3 >
-                       Bot Authorization URL
-                    </h3>
-                    <p>
-                      When you visit this URL it will give you the option to add your bot to the server
-                    </p>
-                    <div class="nes-field is-inline">
-  <label for="oauth-url">Bot authorization URL</label>
-                         <input readonly class="copyurl nes-input" id="oauth-url" type="text" value="" />
-          <button onclick="clipboard('oauth-url')" class="nes-btn">Copy</button>
-          <a href="" id="oauth-url-go" class="button" target="new">Go</a>
-</div>
-
-
-
+            <div id="no-client-found" class="nes-container is-rounded">
+              <div class="nes-badge"><span class="is-error">error</span></div>
+              Oops looks like there is something wrong with your install. Check
+              out the <a href="/install">Install guide to get it set up</a>
+            </div>
           </div>
-     
+          <div id="client-found">
+            <h3>Bot Authorization URL</h3>
+            <p>
+              When you visit this URL it will give you the option to add your
+              bot to the server
+            </p>
+            <div class="nes-field">
+              <label for="oauth-url">Bot authorization URL</label>
+              <input
+                readonly
+                class="copyurl nes-input"
+                id="oauth-url"
+                type="text"
+                value=""
+              />
+            </div>
+            <div class="buttons">
+              <button onclick="clipboard('oauth-url')" class="nes-btn">
+                Copy
+              </button>
+              <a
+                href=""
+                id="oauth-url-go"
+                class="nes-btn is-success"
+                target="new"
+                >Go</a
+              >
+            </div>
+          </div>
         </div>
-
       </section>
 
-
-
-
-      <h2>Keep your bot awake</h2>
-      <div id="uptime-not-found">
-        Oops looks like there is no Uptime Robot api key, you can head to the
-        install guide to learn how to set it up
-      </div>
-      <div id="uptime-not-set-up">
-        Looks like Uptime Robot hasn't been set up yet. Click to set up up a
-        monitor automagically with the following recommended settings
-        <ul>
-          <li>Monitor type: HTTP(s)</li>
-          <li>Friendly Name: <span class="domain-name-title"></span></li>
-          <li>
-            URL: https://<span class="domain-name-title"></span>.glitch.me
-          </li>
-          <li>Monitoring Interval: Every 5 minutes</li>
-        </ul>
-        <button onclick="monitorSetup()" id="uptime-robot-button">
-          Create my Uptime Robot monitor!
-        </button>
-      </div>
-      <div id="uptime-working">
-        Sweet, your Uptime Robot is set up and working, it will ping your domain
+      <section>
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Set up Uptime Robot</h2>
+          <p>
+            As you learned in the <a href="/install">install</a> guide we need
+            Uptime Robot to keep your Discord bot awake all day and all night.
+          </p>
+          <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">
+                I'll check and see if Uptime Robot is set up!
+              </div>
+            </div>
+          </div>
+          <div class="info-box">
+            <div id="uptime-not-found" class="nes-container is-rounded">
+              Oops looks like there is no Uptime Robot api key, you can head to
+              the <a href="/install">install </a>guide to learn how to set it up
+            </div>
+          </div>
+          <div class="info-box">
+            <div id="uptime-not-set-up" class="nes-container is-rounded">
+              Looks like Uptime Robot hasn't been set up yet. We'll set up up a
+              monitor automagically with the following recommended settings
+              <ul class="nes-list is-circle">
+                <li>Monitor type: HTTP(s)</li>
+                <li>Friendly Name: <span class="domain-name-title"></span></li>
+                <li>
+                  URL: https://<span class="domain-name-title"></span>.glitch.me
+                </li>
+                <li>Monitoring Interval: Every 5 minutes</li>
+              </ul>
+              <button
+                onclick="monitorSetup()"
+                id="uptime-robot-button"
+                class="nes-btn is-success"
+              >
+                Create my Uptime Robot monitor!
+              </button>
+            </div>
+          </div>
+          <div class="info-box">
+                  <div id="uptime-working"  class="nes-container is-rounded">
+          <i class="nes-icon trophy is-medium"></i> Sweet, your Uptime Robot is set up and working, it will ping your domain
         every 5 minutes to keep your Discord bot awake!
         <a href="https://uptimerobot.com/dashboard#"
-          >Head to the Uptime Robot Dashboard to see its status</a
+         target="new" >Head to the Uptime Robot Dashboard to see its status</a
         >
       </div>
-
-      <h2>Code your bot!</h2>
-      <p>This bot is built with <a href="hhttps://github.com/brh55/botkit-discord">BotKit Discord</a>, which combines the power of <a href="https://discord.js.org/">Discord.js</a> with <a href="https://botkit.ai/">Botkit</a>. Discord.js is the most popular way to connect node.js apps (like this one!) with the Discord API. Botkit is a hugely useful framework for bot building. You can use either one build on your bot.</p>
-      <p>
-        We've started you off with a Botkit "skill" you can find in <em>skills/hears.js</em>. This skill is triggered someone sends a message starting with !thanks. You can find some more useful skill code in the <a href="hhttps://github.com/brh55/botkit-discord">BotKit Discord</a> Readme. 
-      </p>
-      
-      <h2>
-        Give your bot a memory
-      </h2>
-      <p>
-        You may notice a message saying <code>info: ** No persistent storage method specified! Data may be lost when process shuts down.</code> in the logs. This means that whatever anyone tells the bot, the bot Glitch app doesn't remember. It doesn't save any data about messages. You may want to save data, for example if you want to build a system that stores a record of people who have been thanked by the bot. 
-      </p>
-      <p>
-        <a href="https://botkit.ai/docs/v0/storage.html">You can use the Botkit default storage as shown here</a>. It uses a special kind of file called a .json file. You can see an example in storage.js. The important thing is the file is stored in .data. .data is never shown in the Glitch editor. The reason why is that editing files used as databases in the Glitch editor can corrupt them. If you want to interact with them you'll need to use code or the <a href="">console/terminal</a>. Also files in .data are NOT backed up and .json files can be corrupted if there are multiple database actions at the same time.</p>
-        <p>
+          </div>
+        </div>
+      </section>
+       <section>
+      <div class="nes-container is-light with-title">
+         <h2 class="title">
+           Security Tips!
+        </h2>
+      <p>Here are some tips for keeping your bot secure:</p>
+        <div class="info-box">
           
-      For this reason I recommend using a seperate site for storage like Firebase. It has a user friendly interface for browsing the data and is automatically backed up. Example code is in storage.js. 
-      </p>
-
-
-      <h2>Protect your bot</h2>
-      <p>
-        Here are some tips for keeping your bot secure:
-      </p>
+        </div>
       <ul>
-        <li>NEVER share your Discord API token or put it anywhere else but .env</li>
-        <li>Your code is public (anyone can see and copy it), unless you make your Glitch app <a href="https://glitch.com/help/privateproject/">private</a>.</li>
-        <li>If you add <a href="https://glitch.com/help/how-do-i-invite-collaborators-to-edit-my-project/">collaborators</a> to your project they will be able to see your .env and copy the code. </li>
-          <li>If for some reason you remove a collaborator or accidentally share your token, you should also reset your Discord API token by going to <a href="https://discordapp.com/developers/applications">The Discord Developer portal</a>, clicking on the bot's application, heading to the "bot" section and clicking "regenerate".</li>
-  
+        <li>
+          OnlY put your Discord API token in <code>.env</code>
+        </li>
+        <li>
+          Your code is public (anyone can see and copy it EXCEPT for what's in <code>.env</code>), unless you make your
+          Glitch app
+          <a href="https://glitch.com/help/privateproject/">private</a>.
+        </li>
+        <li>
+          If you add
+          <a
+            href="https://glitch.com/help/how-do-i-invite-collaborators-to-edit-my-project/"
+            >collaborators</a
+          >
+          to your project they will be able to see your .env and copy the code.
+        </li>
+        <li>
+          If for some reason you remove a collaborator or accidentally share
+          your token, you should also reset your Discord API token by going to
+          <a href="https://discordapp.com/developers/applications"
+            >The Discord Developer portal</a
+          >, clicking on the bot's application, heading to the "bot" section and
+          clicking "regenerate".
+        </li>
       </ul>
-
+        </div>
+      </section>
+      <section>
+      <div class="nes-container is-light with-title">
+         <h2 class="title">
+           Code Your Bot
+        </h2>
+          <i class="nes-jp-logo"></i>
+        <p>
+          Head to your project's Readme.md for info about the how the code works and how to edit it. For tutorials on security, storage (databases), and more check out our <a href="https://discord-tutorials.glitch.me/">Discord Tutorials</a> page. 
+          
+        </p>
+        </div>
+      </section>
     </main>
 
     <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
