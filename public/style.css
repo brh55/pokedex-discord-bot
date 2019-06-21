@@ -5,72 +5,18 @@
   box-sizing: border-box;
 }
 
-body {
+p {
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
   margin: 2em;
 }
 
-h1 {
-  font-style: italic;
-  color: #373fff;
-}
+body {
 
-.bold {
-  font-weight: bold;
-}
-
-
-form {
-  margin-bottom: 25px;
-  padding: 15px;
-  background-color: cyan;
-  display: inline-block;
-  width: 100%;
-  max-width: 340px;
-  border-radius: 3px;
-}
-
-.copyurl {
-  display: block;
-  margin-bottom: 10px;
-  padding: 5px;
-  width: 100%;
-  border: 1px solid lightgrey;
-  border-radius: 3px;
-  font-size: 16px;
-}
-
-button, .button {
-  font-size: 16px;
-  border-radius: 3px;
-  background-color: lightgrey;
-  border: 1px solid grey;
-  box-shadow: 2px 2px teal;
-  cursor: pointer;
-  text-decoration: none;
-  color: black;
- padding-block-start: 0px;
-  padding-inline-end: 8px;
-  padding-block-end: 0px;
-  padding-inline-start: 8px;
-}
-
-button:hover, .button:hover {
-  background-color: yellow;
-}
-
-button:active, .button:active {
-  box-shadow: none;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-footer {
-  margin-top: 50px;
-  padding-top: 25px;
-  border-top: 1px solid lightgrey;
+  max-width: 980px;
+  margin: 0 auto;
+  padding-top: 1rem;
+  transition: all 0.2s ease;
+  
 }
 
 
