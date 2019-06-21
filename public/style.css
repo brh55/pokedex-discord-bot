@@ -15,8 +15,8 @@ body {
   
 }
 
-p, code{
-    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+code{
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", Monospace;
 
   
 }
@@ -34,6 +34,7 @@ section {
     margin-top:1em;
 
 }
+
 
 
 /* Balloons sample */
