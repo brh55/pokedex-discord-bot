@@ -35,19 +35,6 @@ section {
 
 }
 
-@media screen and (max-width: 768px) {
-  body {
-    margin: 2rem 0.5rem;
-    padding: 0;
-  }
-
-
-  .message-list > .message > .nes-balloon {
-    max-width: 60%;
-  }
-}
-
-
 
 /* Balloons sample */
 section.message-list {
@@ -59,6 +46,7 @@ section.message-list {
   margin-top: 2rem;
 }
 .message-list > .message > .nes-balloon {
+  color: black;
   max-width: 550px;
 }
 .message-list > .message i {
@@ -94,6 +82,19 @@ textarea {
 textarea:focus {
   -webkit-box-shadow: 0px 0px 3px 0px #a2d7ff;
           box-shadow: 0px 0px 3px 0px #a2d7ff;
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 2rem 0.5rem;
+    padding: 0;
+  }
+
+
+  .message-list > .message > .nes-balloon {
+    max-width: 60%;
+  }
 }
 
 
