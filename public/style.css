@@ -26,6 +26,38 @@ section {
   
 }
 
+.checklist {
+  margin: 2em 0;
+}
+
+/* Balloons sample */
+section.message-list {
+  display: flex;
+  flex-direction: column;
+}
+.message-list > .message {
+  display: flex;
+  margin-top: 2rem;
+}
+.message-list > .message > .nes-balloon {
+  max-width: 550px;
+}
+.message-list > .message i {
+  align-self: flex-end;
+}
+.message-list > .message.-left {
+  align-self: flex-start;
+}
+.message-list > .message.-right {
+  align-self: flex-end;
+}
+.message-list > .message.-left i {
+  margin-right: 2rem;
+}
+.message-list > .message.-right i {
+  margin-left: 2rem;
+}
+
 textarea {
   font-family: Menlo, Consolas, Monaco, "Lucida Console", Monospace;
   font-size: inherit;

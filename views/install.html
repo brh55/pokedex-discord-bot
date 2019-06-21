@@ -56,7 +56,7 @@
             /></a>
           </p>
           <div class="nes-field">
-            <label for="name_field">This Project's URL:</label>
+            <label for="project_url">This Project's URL:</label>
             <div class="addon">
               <input
                 readonly
@@ -93,61 +93,66 @@
               </div>
             </div>
           </div>
+          <div class="checklist">
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Login to the
+                <a
+                  href="https://discordapp.com/developers/applications"
+                  target="new"
+                  >My Applications section of the Discord Developer Portal</a
+                >
+              </span>
+            </label>
+            
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click "New Application" to create an application
+              </span>
+            </label>
+            
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click on "Bot" on the sidebar to go to the "Bot" settings
+              page
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click the "Add bot" button on the "Bot" settings page
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                You should see a "token" section. Click "copy" to copy the
+              token
+              </span>
+            </label>
+          </div>
         </div>
       </section>
-
-      <div>
-        <fieldset>
-          <legend>
-            Steps for creating a Discord Application: Complete these at the
-            <a
-              href="https://discordapp.com/developers/applications"
-              target="new"
-              >Discord Developer Portal</a
-            >
-          </legend>
-          <div>
-            <input type="checkbox" id="check_1" />
-            <label for="check_1"
-              >Login to the
-              <a
-                href="https://discordapp.com/developers/applications"
-                target="new"
-                >My Applications section of the Discord Developer Portal</a
-              ></label
-            >
-          </div>
-
-          <div>
-            <input type="checkbox" id="check_2" />
-            <label for="check_2"
-              >Click "New Application" to create an application</label
-            >
-          </div>
-          <div>
-            <input type="checkbox" id="check_3" />
-            <label for="check_3"
-              >Click on "Bot" on the sidebar to go to the "Bot" settings
-              page</label
-            >
-          </div>
-
-          <div>
-            <input type="checkbox" id="check_4" />
-            <label for="check_4"
-              >Click the "Add bot" button on the "Bot" settings page</label
-            >
-          </div>
-
-          <div>
-            <input type="checkbox" id="check_5" />
-            <label for="check_5"
-              >You should see a "token" section. Click "copy" to copy the
-              token</label
-            >
-          </div>
-        </fieldset>
-      </div>
+      <section>
+          <div class="nes-container is-light with-title">
+            <h2 class="title">Discord tokens </h2>
+        </div>
+        <div class="nes-field">
+          <label>Token</label>
+        <input
+          id="discordToken"
+          class="copyurl"
+          onchange="generateEnv()"
+          placeholder="Paste your token here "
+        />
+  <label>Your name</label>
+  <input type="text" id="name_field" class="nes-input">
+</div>
+      </section>
+      
 
       <h2>Discord tokens</h2>
       <p>
