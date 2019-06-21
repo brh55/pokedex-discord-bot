@@ -293,37 +293,41 @@
           <button class="textarea nes-btn" onclick="clipboard('env_file')" >Copy</button>
         </div>
       </div>
-                      <p>
-        <a href="" id="envFileLink" target="editit"
-          >Click here to head to your <code>.env</code> file</a
-        >
+                    <i class="nes-octocat animate"></i>
+                <br/>   
+                  <p>
+        <a href="" id="envFileLink" target="editit" class="nes-btn">
+          <i class="nes-icon is-small star"></i>        
+Click here to go to your <code>.env</code> file        <i class="nes-icon is-small star"></i> </a>
+   
       </p>  
         </div>
         
        
       </section>
 
-
-
-
-      <h2>Test your .env file</h2>
-      <p>Click the button below to test your <code>.env</code> file</p>
-      <button id="checkInstallButton">Check Connection</button>
-      <div id="connectedSection">
+<section>
+          <div class="nes-container  with-title">
+      <h2 class="title">Test your .env file</h2>
+      <p>Click the button to see if your .env is set up right!</p>
+                  <button id="checkInstallButton" class="nes-btn">Check Connection</button>
+  </div>
+        <div id="connectedSection"  class="nes-container is-rounded">
+            <i class="nes-icon trophy is-large"></i>
         <p>
           Looks like your token is working! Click the refresh button to refresh
           the page and see further steps for building your bot:
         </p>
-        <button id="refreshPageButton">Refresh!</button>
+        <button id="refreshPageButton" class="nes-btn is-primary">Refresh!</button>
       </div>
 
-      <div id="errorSection">
+      <div id="errorSection" class="nes-container is-rounded">
         <p>
           Oops look's like there might be something wrong with your
           <code>.env</code> file. Check it out and then try again.
         </p>
         <h3>Common issues</h3>
-        <ul>
+        <ul class="nes-list is-disc">
           <li>Spaces between <code>=</code> and the token</li>
           <li>Spaces after the token</li>
           <li>
@@ -335,10 +339,18 @@
 
       <div id="apiErrorSection">
         <p>
-          the good news is you have a good .env file the bad news is it doesn't
-          recognize ur token
+          the good news is you have a good .env file the bad news is it doesn't recognize your token. Head to the   <a
+                  href="https://discordapp.com/developers/applications"
+                  target="new"
+                  >Discord Developer Portal </a
+                > to make sure you have the right one
         </p>
       </div>
+      </section>
+
+
+
+
     </main>
 
     <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
