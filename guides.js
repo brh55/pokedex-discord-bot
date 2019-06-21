@@ -120,7 +120,7 @@ router.get("/checkinstall", function(request, response) {
     };
 
     const testBot = discordBotkit(testBotConfig);
-    //  console.log(testBot);
+     console.log(testBot);
     testBot.on("disconnect", event => {
       response.send(500, { error: "apierror" });
     });
