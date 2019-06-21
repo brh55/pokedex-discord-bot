@@ -59,31 +59,39 @@
            target="new">Click here to learn how.</a
         > 
           </p>
+          <div class="info-box">
+               <div id="no-client-found" class="nes-container is-rounded">
+                 <div class="nes-badge">
+  <span class="is-error">error</span>
+</div>
+        Oops looks like there is something wrong with your install. Check out
+        the <a href="/install">Install guide to get it set up</a>
+      </div>
+          </div>  
+                  <div id="client-found">
+                    <h3 >
+                       Bot Authorization URL
+                    </h3>
+                    <p>
+                      When you visit this URL it will give you the option to add your bot to the server
+                    </p>
+                    <div class="nes-field is-inline">
+  <label for="oauth-url">Bot authorization URL</label>
+                         <input readonly class="copyurl nes-input" id="oauth-url" type="text" value="" />
+          <button onclick="clipboard('oauth-url')" class="nes-btn">Copy</button>
+          <a href="" id="oauth-url-go" class="button" target="new">Go</a>
+</div>
 
+
+
+          </div>
+     
         </div>
 
       </section>
 
-      
-      <p>
-        There are several ways to add a Discord bot to the server. For this one
-        we'll use Oauth2, which allows you to use a link that authorizes your
-        bot to a specific server. Read more here.
-      </p>
-      <div id="no-client-found">
-        Oops looks like there is something wrong with your install. Check out
-        the <a href="/install">Install guide to get it set up</a>
-      </div>
-      <div class="input" id="client-found">
-        <label>Bot oauth2 URL</label>
 
-        <div class="addon">
-          <input readonly class="copyurl" id="oauth-url" type="text" value="" />
-          <button onclick="clipboard('oauth-url')">Copy</button>
 
-          <a href="" id="oauth-url-go" class="button" target="new">Go</a>
-        </div>
-      </div>
 
       <h2>Keep your bot awake</h2>
       <div id="uptime-not-found">
