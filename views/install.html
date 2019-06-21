@@ -163,105 +163,122 @@
               <div class="message -right">
                 <!-- Balloon -->
                 <div class="nes-balloon from-right">
-                    Only put it in one place! That's the .env file! 
+                  Only put it in one place! That's the .env file!
                 </div>
                 <i class="nes-bcrikko"></i>
               </div>
             </div>
-            
-                  <p>
-        You don't want it in <code>server.js </code> because by default in
-        Glitch anyone can see that file. And if you copy the project, it will
-        copy the file with the secure token.
-      </p>
 
-
-
-            
+            <p>
+              You don't want it in <code>server.js </code> because by default in
+              Glitch anyone can see that file. And if you copy the project, it
+              will copy the file with the secure token.
+            </p>
           </div>
         </div>
       </section>
       <section>
-        
-<div class="nes-container  with-title">
-        <h2 class="title">Set up Uptime Robot (OPTIONAL)</h2>
-            <div class="message-list">
-              <div class="message -left">
-                <i class="nes-bcrikko"></i>
-                <!-- Balloon -->
-                <div class="nes-balloon from-left">
-                  What's uptime robot?
-                </div>
-              </div>
-
-              <div class="message -right">
-                <!-- Balloon -->
-                <div class="nes-balloon from-right">
-                    It's a handy service that will keep your bot running!
-                </div>
-                <i class="nes-bcrikko"></i>
-              </div>
+        <div class="nes-container  with-title">
+          <h2 class="title">Set up Uptime Robot (OPTIONAL)</h2>
+          <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">What's uptime robot?</div>
             </div>
-<div class="lists">
-  <ul class="nes-list is-circle">
-    <li>Glitch apps automatically "sleep" after 5 minutes</li>
-    <li><a href="https://glitch.com/help/restrictions/"
-          >You can read more about that and other restrictions here.</a></li>
-    <li></li>
-  </ul>
-</div>
 
-</div>
-      </section>
-
-      <p>
-        Wait what's Uptime Robot??? It's a handy service that will help keep
-        your bot running. Glitch apps automatically "sleep" after 5 minutes.
-        <a href="https://glitch.com/help/restrictions/"
-          >You can read more about that and other restrictions here.</a
-        >
-        While your bot's asleep it isn't listening to Discord and will drop out
-        of any servers it's in. It won't be able to respond to anything. Only an
-        external service will be able to keep your bot up 24/7; solutions that
-        just use code running in Glitch won't start your bot up after the
-        12-hour shut down. Luckily Uptime Robot does exactly that!
-        <em
-          >Only an external request to your bot's "site" here on Glitch will
-          keep it running all day and all night.</em
-        >
-        Luckily Uptime Robot does exactly that!
-      </p>
-      <div>
-        <fieldset>
-          <legend>
-            Setting up Uptime Robot. Complete these at the
-            <a href="https://uptimerobot.com" target="new"
-              >Uptime Robot website</a
-            >
-          </legend>
-          <div>
-            <input type="checkbox" id="uptime_check_1" />
-            <label for="uptime_check_1">Create an Uptime Robot Account</label>
+            <div class="message -right">
+              <!-- Balloon -->
+              <div class="nes-balloon from-right">
+                It's a handy service that will keep your bot running!
+              </div>
+              <i class="nes-bcrikko"></i>
+            </div>
+          </div>
+          <div class="lists">
+            <ul class="nes-list is-circle">
+              <li>Glitch apps automatically "sleep" after 5 minutes</li>
+              <li>
+                <a href="https://glitch.com/help/restrictions/"
+                  >You can read more about that and other restrictions here.</a
+                >
+              </li>
+              <li>Sleeping bots drop out of any Discord servers they are in</li>
+              <li>Sleeping bots will not respond to any messages</li>
+              <li>
+                Only an external request to your bot's "site" here on Glitch
+                will wake it up
+              </li>
+              <li>
+                Uptime Robot makes requests every 5 minutes to keep your bot
+                awake!
+              </li>
+            </ul>
           </div>
 
-          <div>
-            <input type="checkbox" id="uptime_check_2" />
-            <label for="uptime_check_2"
-              >Go to
+          <div class="nes-container is-rounded is-dark with-title">
+            <div class="title">Info</div>
+            Some node modules can keep your bot awake, but they only will
+            work for a maximum of 12 hours
+          </div>
+                   <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">
+                Complete these at the
+                <a href="https://uptimerobot.com" target="new"
+              >Uptime Robot website</a
+            >
+              </div>
+            </div>
+          </div>
+                    <div class="checklist">
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Create an Uptime Robot Account
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span> Go to
               <a href="https://uptimerobot.com/dashboard#mySettings"
                 >your settings</a
               >
               under "Main API Key" click the button to generate an API
-              key</label
-            >
+              key</span>
+            </label>
+
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click on "Bot" on the sidebar to go to the "Bot" settings page
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Copy your new API key
+              </span>
+            </label>
           </div>
-          <div>
-            <input type="checkbox" id="uptime_check_3" />
-            <label for="uptime_check_3">Copy your new API key</label>
+          
+                    <div class="nes-field">
+            <label>Token</label>
+            <input
+              id="discordToken"
+              class="copyurl nes-input"
+              onchange="generateEnv()"
+              placeholder="Paste your token here "
+            />
           </div>
-        </fieldset>
-      </div>
-      <p>
+        </div>
+         
+      </section>
+
+    
         <label>Uptime Robot API Key</label>
         <input
           id="uptimeKey"
@@ -269,7 +286,6 @@
           onchange="generateEnv()"
           placeholder="Paste your Uptime Robot API key here "
         />
-      </p>
       <h2>Set up your .env file</h2>
 
       <div class="input">
