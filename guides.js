@@ -1,4 +1,4 @@
-/* This section of code is used by the install and setup guides, you may delete or modify it without breaking your bot once your bot is up and working */
+/* This section of code is used by the install and setup guides, if you modify it make sure you still are hosting a webpage (seen in "show") or Uptime Robot will stop working */
 
 
 const express = require("express");
