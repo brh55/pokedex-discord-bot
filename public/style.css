@@ -5,21 +5,26 @@
   box-sizing: border-box;
 }
 
-p {
-  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  margin: 2em;
-}
 
 body {
 
   max-width: 980px;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 2rem;
   transition: all 0.2s ease;
   
 }
 
+p, code, li {
+    font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
 
+  
+}
+
+section {
+  margin-top: 2.5rem;
+  
+}
 
 textarea {
   font-family: Menlo, Consolas, Monaco, "Lucida Console", Monospace;

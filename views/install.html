@@ -23,8 +23,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- import the webpage's stylesheet -->
-    <link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link
+      href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
 
     <!-- import the webpage's client-side javascript file -->
@@ -34,34 +40,61 @@
     <header><h1>Starter Botkit Discord</h1></header>
 
     <main>
-      <h2>Remix this project</h2>
-      <p>
-        "Remixing" on Glitch makes a new copy of this project. It will have a
-        randomly generated name which you can change.
-      </p>
+      <section>
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Remix this project</h2>
+          <p>
+            "Remixing" on Glitch makes a new copy of this project. It will have
+            a randomly generated name which you can change.
+          </p>
 
-      <p id="remix-me">
-        <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"
-          ><img
-            src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg"
-            alt="Remix on Glitch"
-        /></a>
-      </p>
-
-      <div class="input">
-        <label>This Project's URL:</label>
-        <div class="addon">
-          <input
-            readonly
-            class="copyurl"
-            id="project_url"
-            type="text"
-            value=""
-          />
-          <button onclick="clipboard('project_url')">Copy</button>
+          <p id="remix-me">
+            <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"
+              ><img
+                src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg"
+                alt="Remix on Glitch"
+            /></a>
+          </p>
+          <div class="nes-field">
+            <label for="name_field">This Project's URL:</label>
+            <div class="addon">
+              <input
+                readonly
+                class="copyurl nes-input"
+                id="project_url"
+                type="text"
+                value=""
+              />
+              <br />
+              <button
+                class="nes-btn is-primary"
+                onclick="clipboard('project_url')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-      <h2>Create your Discord application</h2>
+      </section>
+      <section>
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Create your Discord application</h2>
+          <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">
+                Complete these at the
+                <a
+                  href="https://discordapp.com/developers/applications"
+                  target="new"
+                  >Discord Developer Portal</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <div>
         <fieldset>
@@ -133,7 +166,7 @@
         default in Glitch anyone can see that file. And if you copy the project,
         it will copy the file with the secure token.
       </p>
-      
+
       <p>
         The <em>only</em> place you should put it is a file called
         <code>.env</code>
@@ -208,7 +241,8 @@
 
       <div class="input">
         <label
-          >This is what should be in your <code>.env</code> file. You can copy this text and replace the current contents with this.</label
+          >This is what should be in your <code>.env</code> file. You can copy
+          this text and replace the current contents with this.</label
         >
         <div class="addon">
           <textarea rows="20" class="copyurl" id="env_file"></textarea>
@@ -216,7 +250,11 @@
         </div>
       </div>
 
-      <p><a href="" id="envFileLink" target="editit">Here is a link to your <code>.env</code> file</a></p>
+      <p>
+        <a href="" id="envFileLink" target="editit"
+          >Here is a link to your <code>.env</code> file</a
+        >
+      </p>
       <h2>Test your .env file</h2>
       <p>Click the button below to test your <code>.env</code> file</p>
       <button id="checkInstallButton">Check Connection</button>
