@@ -29,6 +29,12 @@ section {
   margin: 2em 0;
 }
 
+.nes-list li {
+  
+    margin-top:1em;
+
+}
+
 @media screen and (max-width: 768px) {
   body {
     margin: 2rem 0.5rem;
@@ -40,6 +46,8 @@ section {
     max-width: 60%;
   }
 }
+
+
 
 /* Balloons sample */
 section.message-list {

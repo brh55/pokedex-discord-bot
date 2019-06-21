@@ -145,39 +145,43 @@
             />
           </div>
           <br />
-          <div  class="nes-badge">
-              <span class="is-warning">Warning!</span>
+          <div class="nes-badge"><span class="is-warning">Warning!</span></div>
+          <div class="lists">
+            <ul class="nes-list is-circle">
+              <li>A token is a secret password</li>
+              <li>It can be used to hack your bot!</li>
+            </ul>
+            <div class="message-list">
+              <div class="message -left">
+                <i class="nes-bcrikko"></i>
+                <!-- Balloon -->
+                <div class="nes-balloon from-left">
+                  Yikes so how do I keep it secure?
+                </div>
+              </div>
+
+              <div class="message -right">
+                <!-- Balloon -->
+                <div class="nes-balloon from-right">
+                    Only put it in one place! That's the .env file! 
+                </div>
+                <i class="nes-bcrikko"></i>
+              </div>
+            </div>
+            
+                  <p>
+        You don't want it in <code>server.js </code> because by default in
+        Glitch anyone can see that file. And if you copy the project, it will
+        copy the file with the secure token.
+      </p>
+
+
+
+            
           </div>
-                <div class="lists">
-  <ul class="nes-list is-circle">
-    <li>A token is a secret password</li>
-    <li>It can be used to hack your bot!</li>
-    <li>ONLY put it in a special file called .env</li>
-    <li>Good night.</li>
-  </ul>
-</div>
         </div>
-  
       </section>
 
-      <p>
-         You don't want it in <code>server.js </code> because by
-        default in Glitch anyone can see that file. And if you copy the project,
-        it will copy the file with the secure token.
-      </p>
-
-      <p>
-        The <em>only</em> place you should put it is a file called
-        <code>.env</code>
-      </p>
-
-      <p>
-        You should put your token after <code>DISCORD_TOKEN=</code>. So if your
-        token is <code>ewriewirew438234adadfs</code> it will look like
-        <code>DISCORD_TOKEN=ewriewirew438234adadfs</code>. Make sure you don't
-        accidentally add any spaces or other characters around it because it
-        won't work correctly.
-      </p>
 
       <h2>Set up Uptime Robot (OPTIONAL)</h2>
       <p>
