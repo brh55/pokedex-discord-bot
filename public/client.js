@@ -14,16 +14,16 @@ const clientFound = document.getElementById("client-found");
 clientFound.style.display = "none";
 
 const uptimeNotFound = document.getElementById("uptime-not-found");
-//uptimeNotFound.style.display = "none";
+uptimeNotFound.style.display = "none";
 
 const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
-//uptimeNotSetUp.style.display = "none";
+uptimeNotSetUp.style.display = "none";
 
 const uptimeWorking = document.getElementById("uptime-working");
-//uptimeWorking.style.display = "none";
+uptimeWorking.style.display = "none";
 
 const uptimeButton = document.getElementById("uptime-robot-button");
-//uptimeButton.style.display = "none";
+uptimeButton.style.display = "none";
 
 function getDomain() {
   console.log("test");

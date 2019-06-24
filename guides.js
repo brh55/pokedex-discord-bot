@@ -45,8 +45,7 @@ router.get("/botinfo", async function(request, response) {
     }
   });
 
-  console.log("uptimeRobotApiKey", uptimeRobotApiKey);
-  console.log("uptimeRobotMonitor", uptimeRobotMonitor);
+  console.log("authURL", authURL);
 
   response.status(200).json({
     url: authURL,
