@@ -23,7 +23,7 @@ router.get("/domainname", function(request, response) {
 });
 
 router.get("/botinfo", async function(request, response) {
-  let authURL = discordBot.config.client.inviteURL;
+  let authURL = "https://discordapp.com/api/oauth2/authorize?client_id="+discordBot.config.client.user.id+"&permissions=0&scope=bot;"
   let domain = process.env.PROJECT_DOMAIN;
   let uptime = process.uptime();
   let uptimeRobot;
@@ -45,7 +45,6 @@ router.get("/botinfo", async function(request, response) {
     }
   });
 
-  console.log("authURL", authURL);
 
   response.status(200).json({
     url: authURL,
