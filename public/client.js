@@ -78,3 +78,9 @@ function monitorSetup() {
       return Promise.resolve();
     });
 }
+
+function clipboard(element) {
+  let copyText = document.getElementById(element);
+  copyText.select();
+  document.execCommand("Copy");
+}
