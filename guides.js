@@ -1,6 +1,5 @@
 /* This section of code is used by the install and setup guides, if you modify it make sure you still are hosting a webpage (seen in "show") or Uptime Robot will stop working */
 
-
 const express = require("express");
 const router = express.Router();
 const discordBotkit = require("botkit-discord");
@@ -23,7 +22,10 @@ router.get("/domainname", function(request, response) {
 });
 
 router.get("/botinfo", async function(request, response) {
-  let authURL = "https://discordapp.com/api/oauth2/authorize?client_id="+discordBot.config.client.user.id+"&permissions=0&scope=bot"
+  let authURL =
+    "https://discordapp.com/api/oauth2/authorize?client_id=" +
+    discordBot.config.client.user.id +
+    "&permissions=0&scope=bot";
   let domain = process.env.PROJECT_DOMAIN;
   let uptime = process.uptime();
   let uptimeRobot;
@@ -33,18 +35,20 @@ router.get("/botinfo", async function(request, response) {
   try {
     uptimeRobot = await new Client(process.env.UPTIME_ROBOT_KEY);
     uptimeRobotApiKey = true;
+
+    let monitors = await uptimeRobot.getMonitors();
+
+    monitors.forEach(function(monitor) {
+      if (
+        monitor.url ==
+        "https://" + process.env.PROJECT_DOMAIN + ".glitch.me"
+      ) {
+        uptimeRobotMonitor = true;
+      }
+    });
   } catch (e) {
     console.log("Error caught");
   }
-
-  let monitors = await uptimeRobot.getMonitors();
-
-  monitors.forEach(function(monitor) {
-    if (monitor.url == "https://" + process.env.PROJECT_DOMAIN + ".glitch.me") {
-      uptimeRobotMonitor = true;
-    }
-  });
-
 
   response.status(200).json({
     url: authURL,
@@ -118,7 +122,7 @@ router.get("/checkinstall", function(request, response) {
     };
 
     const testBot = discordBotkit(testBotConfig);
-     console.log(testBot);
+    console.log(testBot);
     testBot.on("disconnect", event => {
       response.send(500, { error: "apierror" });
     });
