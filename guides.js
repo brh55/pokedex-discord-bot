@@ -35,7 +35,11 @@ router.get("/botinfo", async function(request, response) {
   try {
     uptimeRobot = await new Client(process.env.UPTIME_ROBOT_KEY);
     uptimeRobotApiKey = true;
+  } catch (e) {
+    console.log("Error caught");
+  }
 
+  try {
     let monitors = await uptimeRobot.getMonitors();
 
     monitors.forEach(function(monitor) {
