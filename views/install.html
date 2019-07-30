@@ -1,0 +1,377 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Starter Botkit Discord Install Guide</title>
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link
+      href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/install.js" defer></script>
+  </head>
+  <body>
+    <header><h1>Starter Botkit Discord Install Guide</h1></header>
+
+    <main>
+      <section>
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Remix this project</h2>
+          <p>
+            "Remixing" on Glitch makes a new copy of this project. It will have
+            a randomly generated name which you can change.
+          </p>
+
+          <p id="remix-me">
+            <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"
+              ><img
+                src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg"
+                alt="Remix on Glitch"
+            /></a>
+          </p>
+          <div class="nes-field">
+            <label for="project_url">This Project's URL:</label>
+            <div class="addon">
+              <input
+                readonly
+                class="copyurl nes-input"
+                id="project_url"
+                type="text"
+                value=""
+              />
+              <br />
+              <button
+                class="nes-btn is-primary"
+                onclick="clipboard('project_url')"
+              >
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Create your Discord application</h2>
+          <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">
+                Complete these at the
+                <a
+                  href="https://discordapp.com/developers/applications"
+                  target="new"
+                  >Discord Developer Portal</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="checklist">
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Login to the
+                <a
+                  href="https://discordapp.com/developers/applications"
+                  target="new"
+                  >My Applications section of the Discord Developer Portal</a
+                >
+              </span>
+            </label>
+
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span> Click "New Application" to create an application </span>
+            </label>
+
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click on "Bot" on the sidebar to go to the "Bot" settings page
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click the "Add bot" button on the "Bot" settings page
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                You should see a "token" section. Click "copy" to copy the token
+              </span>
+            </label>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="nes-container is-light with-title">
+          <h2 class="title">Discord tokens</h2>
+          <div class="nes-field">
+            <label>Token</label>
+            <input
+              id="discordToken"
+              class="copyurl nes-input"
+              onchange="generateEnv()"
+              placeholder="Paste your token here "
+            />
+          </div>
+          <br />
+          <div class="nes-badge"><span class="is-warning">Warning!</span></div>
+          <div class="lists">
+            <ul class="nes-list is-circle">
+              <li>A token is a secret password</li>
+              <li>It can be used to hack your bot!</li>
+            </ul>
+            <div class="message-list">
+              <div class="message -left">
+                <i class="nes-bcrikko"></i>
+                <!-- Balloon -->
+                <div class="nes-balloon from-left">
+                  Yikes so how do I keep it secure?
+                </div>
+              </div>
+
+              <div class="message -right">
+                <!-- Balloon -->
+                <div class="nes-balloon from-right">
+                  Only put it in one place! That's the .env file!
+                </div>
+                <i class="nes-bcrikko"></i>
+              </div>
+            </div>
+            <br />
+            <div class="nes-container is-rounded is-dark with-title">
+              <div class="title">Info</div>
+              <p>
+                You don't want it in <code>server.js </code> because by default
+                in Glitch anyone can see that file. And if you copy the project,
+                it will copy the file with the secure token.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="nes-container  with-title">
+          <h2 class="title">Set up Uptime Robot (OPTIONAL)</h2>
+          <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">What's uptime robot?</div>
+            </div>
+
+            <div class="message -right">
+              <!-- Balloon -->
+              <div class="nes-balloon from-right">
+                It's a handy service that will keep your bot running!
+              </div>
+              <i class="nes-bcrikko"></i>
+            </div>
+          </div>
+          <div class="lists">
+            <ul class="nes-list is-circle">
+              <li>Glitch apps automatically "sleep" after 5 minutes</li>
+              <li>
+                <a href="https://glitch.com/help/restrictions/"
+                  >You can read more about that and other restrictions here.</a
+                >
+              </li>
+              <li>Sleeping bots drop out of any Discord servers they are in</li>
+              <li>Sleeping bots will not respond to any messages</li>
+              <li>
+                Only an external request to your bot's "site" here on Glitch
+                will wake it up
+              </li>
+              <li>
+                Uptime Robot makes requests every 5 minutes to keep your bot
+                awake!
+              </li>
+            </ul>
+          </div>
+
+          <div class="nes-container is-rounded is-dark with-title">
+            <div class="title">Info</div>
+            Some node modules can keep your bot awake, but they only will work
+            for a maximum of 12 hours
+          </div>
+          <div class="message-list">
+            <div class="message -left">
+              <i class="nes-bcrikko"></i>
+              <!-- Balloon -->
+              <div class="nes-balloon from-left">
+                Complete these at the
+                <a href="https://uptimerobot.com" target="new"
+                  >Uptime Robot website</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="checklist">
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span> Create an Uptime Robot Account </span>
+            </label>
+
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Go to
+                <a href="https://uptimerobot.com/dashboard#mySettings"
+                  >your settings</a
+                >
+                under "Main API Key" click the button to generate an API
+                key</span
+              >
+            </label>
+
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span>
+                Click on "Bot" on the sidebar to go to the "Bot" settings page
+              </span>
+            </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span> Copy your new API key </span>
+            </label>
+          </div>
+
+          <div class="nes-field">
+            <label>Uptime Robot API Key</label>
+            <input
+              id="uptimeKey"
+              class="copyurl nes-input"
+              onchange="generateEnv()"
+              placeholder="Paste your Uptime Robot API key here "
+            />
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="nes-container  with-title">
+          <h2 class="title">Set up your .env file</h2>
+          <p class="nes-text is-primary">We're almost there!</p>
+          <progress
+            class="nes-progress is-primary"
+            value="80"
+            max="100"
+          ></progress>
+          <div class="input">
+            <label for="env_file"
+              >This is what should be in your <code>.env</code> file. You can
+              copy this text and replace the current contents with this.</label
+            >
+            <div class="addon">
+              <textarea
+                rows="20"
+                class="copyurl nes-textarea"
+                id="env_file"
+              ></textarea>
+              <button class="textarea nes-btn" onclick="clipboard('env_file')">
+                Copy
+              </button>
+            </div>
+          </div>
+          <i class="nes-octocat animate"></i> <br />
+          <p>
+            <a href="" id="envFileLink" target="editit" class="nes-btn">
+              <i class="nes-icon is-small star"></i> Click here to go to your
+              <code>.env</code> file <i class="nes-icon is-small star"></i>
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="nes-container  with-title">
+          <h2 class="title">Test your .env file</h2>
+          <p>Click the button to see if your .env is set up right!</p>
+          <button id="checkInstallButton" class="nes-btn">
+            Check Connection
+          </button>
+          <div class="info-box">
+            <div id="connectedSection" class="nes-container is-rounded">
+              <i class="nes-icon trophy is-large"></i>
+              <p>
+                Looks like your token is working! Click the refresh button to
+                refresh the page and see further steps for building your bot:
+              </p>
+              <button id="refreshPageButton" class="nes-btn is-primary">
+                Refresh!
+              </button>
+            </div>
+          </div>
+          <div class="info-box">
+            <div id="errorSection" class="nes-container is-rounded">
+              <p>
+                Oops look's like there might be something wrong with your
+                <code>.env</code> file. Check it out and then try again.
+              </p>
+              <h3>Common issues</h3>
+              <ul class="nes-list is-disc">
+                <li>Spaces between <code>=</code> and the token</li>
+                <li>Spaces after the token</li>
+                <li>
+                  Adding the text from the generator above to the file instead
+                  of replacing the old text
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="info-box">
+            <div id="apiErrorSection" class="nes-container is-rounded">
+              <p>
+                the good news is you have a good .env file the bad news is it
+                doesn't recognize your token. Head to the
+                <a
+                  href="https://discordapp.com/developers/applications"
+                  target="new"
+                  >Discord Developer Portal
+                </a>
+                to make sure you have the right one
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
