@@ -75,4 +75,7 @@ Remix this app and click show! The install guide will walk you all the steps nee
 
 ## I finished the install and setup guide!
 
-Congrads! Head to skills/hears.js or our [Discord Tutorials](https://discord-tutorials.glitch.me/) page
+Congrads! Head to skills/hears.js to learn about Botkit skills!
+
+We've also made some examples for you: 
+* [Grittybot](https://grittybot.glitch.me/): sports stats, Gritty info, and gifs!
