@@ -2,7 +2,7 @@ module.exports = function(controller) {
   controller.hears("!thanks", ["direct_mention", "mention"], (bot, message) => {
     let response;
     let sender = message.user.toString();
-    let recipient = message.mentions.users.last();
+    let recipient = message.mentions.users.first();
     
     let responses = [
       `${recipient} got kudos from ${sender} 🎉`,
