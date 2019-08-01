@@ -3,7 +3,6 @@ module.exports = function(controller) {
     let response;
     let sender = message.user.toString();
     let recipient = message.mentions.users.first();
-    console.log(message.mentions)
     
     let responses = [
       `${recipient} got kudos from ${sender} 🎉`,
