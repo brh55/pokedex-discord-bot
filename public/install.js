@@ -13,17 +13,16 @@ errorSection.style.display = "none";
 const apiErrorSection = document.getElementById("apiErrorSection");
 apiErrorSection.style.display = "none";
 
-const envFileLink = document.getElementById("envFileLink");
+const envFileLinkDiscord = document.getElementById("envFileLinkDiscord");
+const envFileLinkUptime = document.getElementById("envFileLinkUptime");
+
 const projectURL = document.getElementById("project_url");
 
 let domainName = "";
 
-const remixMe = document.getElementById("remix-me");
-remixMe.style.display = "none";
 
 
 function checkInstall() {
-  console.log("test");
   return fetch("/checkinstall/")
     .then(res => res.json())
     .then(resJson => {
@@ -47,9 +46,7 @@ function refreshPage() {
   location.reload();
 }
 
-function getDomain() {
-  console.log("test");
-  return fetch("/domainname/")
+function getDomain() {  return fetch("/domainname/")
     .then(res => res.json())
     .then(resJson => {
       if (resJson.error) {
@@ -58,14 +55,15 @@ function getDomain() {
         console.log(resJson.message);
         domainName = resJson.message;
         console.log("domain name " + domainName);
-        if(domainName == "starter-botkit-discord"){
+        if (domainName == "starter-botkit-discord") {
           console.log("starter botkit")
-           remixMe.style.display = "block";
+          remixMe.style.display = "block";
 
         }
-        projectURL.value = "https://" + domainName + ".glitch.me";
-        envFileLink.href =
-          "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
+        projectURL.innerHTML = "https://" + domainName + ".glitch.me";
+        envFileLinkUptime.href = "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
+
+        envFileLinkDiscord.href = "https://glitch.com/edit/#!/" + domainName + "?path=.env:9";
       }
       return Promise.resolve();
     });
@@ -73,29 +71,3 @@ function getDomain() {
 
 getDomain();
 
-function clipboard(element) {
-  let copyText = document.getElementById(element);
-  copyText.select();
-  document.execCommand("Copy");
-}
-
-function generateEnv() {
-  let discordToken =
-    document.getElementById("discordToken").value || "discordToken";
-  let uptimeKey =
-    document.getElementById("uptimeKey").value || "uptimebotAPIKey";
-  let env = `# Environment Config
-
-# store your secrets and config variables in here
-# only invited collaborators will be able to see your .env values
-
-# reference these in your code with process.env.SECRET
-
-DISCORD_TOKEN=${discordToken}
-UPTIME_ROBOT_KEY=${uptimeKey}
-# note: .env is a shell file so there can't be spaces around =
-`;
-  document.getElementById("env_file").value = env;
-}
-
-generateEnv();

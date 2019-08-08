@@ -44,37 +44,27 @@
         <div class="nes-container is-light with-title">
           <h2 class="title">Remix this project</h2>
           <p>
-            "Remixing" on Glitch makes a new copy of this project. It will have
-            a randomly generated name which you can change.
+            Welcome to our interactive Discord Bot install guide! First, you'll want to create your own version of this Glitch App, if you haven't already. To do this, create a "Remix."
+          </p>
+          <p>
+            "Remixing" on Glitch makes a new copy of this project that belongs to you. It will have
+            a randomly generated name which <a href="https://glitch.com/help/how-do-i-change-my-projects-name-description-avatar/" target="new">you can change.</a>
           </p>
 
-          <p id="remix-me">
+          <p >
             <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"
               ><img
                 src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg"
                 alt="Remix on Glitch"
             /></a>
           </p>
-          <div class="nes-field">
-            <label for="project_url">This Project's URL:</label>
-            <div class="addon">
-              <input
-                readonly
-                class="copyurl nes-input"
-                id="project_url"
-                type="text"
-                value=""
-              />
-              <br />
-              <button
-                class="nes-btn is-primary"
-                onclick="clipboard('project_url')"
-              >
-                Copy
-              </button>
-            </div>
+          <div class="nes-container with-title is-centered">
+            <p class="title">This Project's URL:</p>
+            <i class="nes-icon is-large star"></i>
+            <p id="project_url"></p>
           </div>
         </div>
+
       </section>
       <section>
         <div class="nes-container is-light with-title">
@@ -126,7 +116,7 @@
             <label>
               <input type="checkbox" class="nes-checkbox" />
               <span>
-                You should see a "token" section. Click "copy" to copy the token
+                You should see a "token" section. Click "copy" to copy the Discord Bot Token
               </span>
             </label>
           </div>
@@ -135,15 +125,6 @@
       <section>
         <div class="nes-container is-light with-title">
           <h2 class="title">Discord tokens</h2>
-          <div class="nes-field">
-            <label>Token</label>
-            <input
-              id="discordToken"
-              class="copyurl nes-input"
-              onchange="generateEnv()"
-              placeholder="Paste your token here "
-            />
-          </div>
           <br />
           <div class="nes-badge"><span class="is-warning">Warning!</span></div>
           <div class="lists">
@@ -169,14 +150,56 @@
               </div>
             </div>
             <br />
+            <p>
+              Your .env file might look complicated, but basically the format is to put your secret token after the "=". Don't add any extra spaces because that can cause errors. So let's say your Discord Bot token is PASSWORD123. Then your .env would look like:
+            </p>
+            <pre>
+              <code>
+                GLITCH_DEBUGGER=
+                # Environment Config
+
+                # store your secrets and config variables in here
+                # only invited collaborators will be able to see your .env values
+
+                # reference these in your code with process.env.SECRET
+
+                DISCORD_TOKEN=PASSWORD123
+                UPTIME_ROBOT_KEY=
+                # note: .env is a shell file so there can't be spaces around =
+                utm_source=starter-botkit-discord
+                utm_medium=button
+                utm_campaign=glitchButton
+              </code>
+            </pre>
+            <a href="" class="envFileLink nes-btn" id="envFileLinkDiscord" target="editit">
+              <i class="nes-icon is-small star"></i> Click here to go to your
+              <code>.env</code> file <i class="nes-icon is-small star"></i>
+            </a>
+            <br />
+            <div class="checklist">
+              <label>
+                <input type="checkbox" class="nes-checkbox" />
+                <span>
+                  Go to your .env file
+                </span>
+              </label>
+  
+              <label>
+                <input type="checkbox" class="nes-checkbox" />
+                <span> Copy your Discord Bot Token next to "DISCORD_TOKEN="</span>
+              </label>
+
+            </div>
+          </div>
             <div class="nes-container is-rounded is-dark with-title">
               <div class="title">Info</div>
               <p>
-                You don't want it in <code>server.js </code> because by default
+                You don't want to put tokens in <code>server.js </code> because by default
                 in Glitch anyone can see that file. And if you copy the project,
-                it will copy the file with the secure token.
+                it will copy the file with the secure token. Yikes!
               </p>
             </div>
+
           </div>
         </div>
       </section>
@@ -224,22 +247,12 @@
             Some node modules can keep your bot awake, but they only will work
             for a maximum of 12 hours
           </div>
-          <div class="message-list">
-            <div class="message -left">
-              <i class="nes-bcrikko"></i>
-              <!-- Balloon -->
-              <div class="nes-balloon from-left">
-                Complete these at the
-                <a href="https://uptimerobot.com" target="new"
-                  >Uptime Robot website</a
-                >
-              </div>
-            </div>
-          </div>
           <div class="checklist">
             <label>
               <input type="checkbox" class="nes-checkbox" />
-              <span> Create an Uptime Robot Account </span>
+              <span> Create an Uptime Robot account at the <a href="https://uptimerobot.com" target="new"
+                >Uptime Robot website</a
+              > </span>
             </label>
 
             <label>
@@ -264,58 +277,22 @@
               <input type="checkbox" class="nes-checkbox" />
               <span> Copy your new API key </span>
             </label>
+            <label>
+              <input type="checkbox" class="nes-checkbox" />
+              <span> Put it in your .env file after "UPTIME_ROBOT_KEY=" </span>
+            </label>
           </div>
-
-          <div class="nes-field">
-            <label>Uptime Robot API Key</label>
-            <input
-              id="uptimeKey"
-              class="copyurl nes-input"
-              onchange="generateEnv()"
-              placeholder="Paste your Uptime Robot API key here "
-            />
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="nes-container  with-title">
-          <h2 class="title">Set up your .env file</h2>
-          <p class="nes-text is-primary">We're almost there!</p>
-          <progress
-            class="nes-progress is-primary"
-            value="80"
-            max="100"
-          ></progress>
-          <div class="input">
-            <label for="env_file"
-              >This is what should be in your <code>.env</code> file. You can
-              copy this text and replace the current contents with this.</label
-            >
-            <div class="addon">
-              <textarea
-                rows="20"
-                class="copyurl nes-textarea"
-                id="env_file"
-              ></textarea>
-              <button class="textarea nes-btn" onclick="clipboard('env_file')">
-                Copy
-              </button>
-            </div>
-          </div>
-          <i class="nes-octocat animate"></i> <br />
-          <p>
-            <a href="" id="envFileLink" target="editit" class="nes-btn">
+            <a href="" class="envFileLink nes-btn" id="envFileLinkUptime" target="editit">
               <i class="nes-icon is-small star"></i> Click here to go to your
               <code>.env</code> file <i class="nes-icon is-small star"></i>
             </a>
-          </p>
         </div>
       </section>
 
+
       <section>
         <div class="nes-container  with-title">
-          <h2 class="title">Test your .env file</h2>
+          <h2 class="title">Test your install</h2>
           <p>Click the button to see if your .env is set up right!</p>
           <button id="checkInstallButton" class="nes-btn">
             Check Connection
@@ -342,10 +319,7 @@
               <ul class="nes-list is-disc">
                 <li>Spaces between <code>=</code> and the token</li>
                 <li>Spaces after the token</li>
-                <li>
-                  Adding the text from the generator above to the file instead
-                  of replacing the old text
-                </li>
+                <li>Missing your Discord Bot token</li>
               </ul>
             </div>
           </div>
