@@ -57,8 +57,6 @@ function getDomain() {  return fetch("/domainname/")
         console.log("domain name " + domainName);
         if (domainName == "starter-botkit-discord") {
           console.log("starter botkit")
-          remixMe.style.display = "block";
-
         }
         projectURL.innerHTML = "https://" + domainName + ".glitch.me";
         envFileLinkUptime.href = "https://glitch.com/edit/#!/" + domainName + "?path=.env:10";
