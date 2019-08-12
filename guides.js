@@ -22,15 +22,21 @@ router.get("/domainname", function(request, response) {
 });
 
 router.get("/botinfo", async function(request, response) {
-  let authURL =
-    "https://discordapp.com/api/oauth2/authorize?client_id=" +
-    discordBot.config.client.user.id +
-    "&permissions=0&scope=bot";
+  let authURL;
   let domain = process.env.PROJECT_DOMAIN;
   let uptime = process.uptime();
   let uptimeRobot;
   let uptimeRobotApiKey = false;
   let uptimeRobotMonitor = false;
+  
+  try {
+     authURL = "https://discordapp.com/api/oauth2/authorize?client_id=" +
+    discordBot.config.client.user.id +
+    "&permissions=0&scope=bot";
+  } catch (e) {
+    console.log("Error caught");
+  }
+
 
   try {
     uptimeRobot = await new Client(process.env.UPTIME_ROBOT_KEY);
