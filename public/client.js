@@ -25,6 +25,10 @@ uptimeWorking.style.display = "none";
 const uptimeButton = document.getElementById("uptime-robot-button");
 uptimeButton.style.display = "none";
 
+const readmeFileLink = document.getElementById("readme-file-link");
+
+
+
 function getDomain() {
   console.log("test");
   return fetch("/botinfo/")
@@ -37,6 +41,9 @@ function getDomain() {
         authUrl = resJson.url;
 
         console.log("domain name " + domainName);
+        readmeFileLink.href = "https://glitch.com/edit/#!/" + domainName + "?path=readme.md:2:0";
+
+
         [...domainNameTitle].forEach(function(element) {
           element.innerHTML = domainName;
         });

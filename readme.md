@@ -4,7 +4,7 @@ Starter Botkit Discord is a Discord bot with an interactive setup and coding gui
 
 The Install guide connects your Glitch app to a Discord app. It also teaches some important basic security guide. The Setup guide shows you how to add it to a Discord Server, keep it up and running, and add new functionality.
 
-It uses B
+It uses
 
 - Botkit: a handy bot building framework
 - Discord.js: a node module for connecting to the Discord API
