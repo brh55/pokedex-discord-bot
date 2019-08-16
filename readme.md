@@ -1,6 +1,6 @@
 # Botkit Discord Starter App
 
-Starter Botkit Discord is a Discord bot with an interactive setup and coding guide. Click "show" to start following the guide.
+Starter Botkit Discord is a Discord bot with an interactive setup and coding guide. Click "show" to start following the guide. We recommend following teh guide before you go through the code here. 
 
 The Install guide connects your Glitch app to a Discord app. It also teaches some important basic security guide. The Setup guide shows you how to add it to a Discord Server, keep it up and running, and add new functionality.
 
@@ -78,4 +78,3 @@ Remix this app and click show! The install guide will walk you all the steps nee
 Congrads! I bet you're excited to get started with customizing your bot
 * Head to skills/hears.js to learn how a Botkit skill works and how to customize it
 * Check out our [Discord collection](https://glitch.com/@glitch/discord) for some examples – feel free to copy the code into your own bot or remix them
-* Our [Discord Tutorials](https://discord-tutorials.glitch.me/) page
