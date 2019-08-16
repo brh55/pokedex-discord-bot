@@ -71,10 +71,6 @@ router.get("/botinfo", async function(request, response) {
 
 router.get("/monitor", function(request, response) {
   let uptime = process.uptime();
-  /* let uptime = process.uptime();
-  response.status(200).json({
-    message: uptime
-  });*/
   try {
     const uptimeRobot = new Client(process.env.UPTIME_ROBOT_KEY);
     uptimeRobot.getMonitors({}, function(err, monitors) {
@@ -130,6 +126,12 @@ router.get("/checkinstall", function(request, response) {
     const testBotConfig = {
       token: process.env.DISCORD_TOKEN
     };
+
+    var customTimeout = 5000;
+
+    response.setTimeout(customTimeout, function(){
+      response.send(500, { error: "timeout" });
+    });
 
     const testBot = discordBotkit(testBotConfig);
     console.log(testBot);
