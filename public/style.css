@@ -82,6 +82,12 @@ section.message-list {
   height: auto;
 }
 
+.pixel-icon {
+  vertical-align: text-bottom;
+  border-style: none;
+
+}
+
 textarea {
   font-family: Menlo, Consolas, Monaco, "Lucida Console", Monospace;
   font-size: inherit;
