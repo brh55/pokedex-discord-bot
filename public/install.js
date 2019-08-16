@@ -13,6 +13,10 @@ errorSection.style.display = "none";
 const apiErrorSection = document.getElementById("apiErrorSection");
 apiErrorSection.style.display = "none";
 
+const timedOut = document.getElementById("timedOut");
+timedOut.style.display = "none";
+
+
 const envFileLinkDiscord = document.getElementById("envFileLinkDiscord");
 const envFileLinkUptime = document.getElementById("envFileLinkUptime");
 
@@ -34,6 +38,10 @@ function checkInstall() {
 
         if (resJson.error == "apierror") {
           apiErrorSection.style.display = "block";
+        }
+
+        if (resJson.error == "timeout") {
+          timedOut.style.display = "block";
         }
       } else {
         connectedSection.style.display = "block";
