@@ -80,12 +80,13 @@ function monitorSetup() {
   return fetch("/createMonitor")
     .then(res => res.json())
     .then(resJson => {
-      if (resJson.error) {
-        console.log(resJson.error);
+      console.log(resJson)
+      if (resJson.name == "UptimeRobotServerError") {
         uptimeNotWorking.style.display = "block";
       } else {
         console.log(resJson.message);
         uptimeWorking.style.display = "block";
+
       }
       return Promise.resolve();
     });
