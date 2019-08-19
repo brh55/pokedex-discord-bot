@@ -1,6 +1,6 @@
 # Botkit Discord Starter App
 
-Starter Botkit Discord is a Discord bot with an interactive setup and coding guide. Click "show" to start following the guide. We recommend following teh guide before you go through the code here. 
+Starter Botkit Discord is a Discord bot with an interactive setup and coding guide. Click "Show" to start following the guide. We recommend following the guide before you go through the code here. 
 
 The Install guide connects your Glitch app to a Discord app. It also teaches some important basic security guide. The Setup guide shows you how to add it to a Discord Server, keep it up and running, and add new functionality.
 
