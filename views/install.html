@@ -9,35 +9,47 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
-    <title>Starter Botkit Discord Install Guide</title>
-    <meta name="description" content="A cool thing made with Glitch" />
-    <link
-      id="favicon"
-      rel="icon"
-      href="https://glitch.com/edit/favicon-app.ico"
-      type="image/x-icon"
-    />
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8">
+    <title>Glitch Discord Starter Kit</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Build a Discord Bot on Glitch with this interactive install guide">
+    <meta name="image" content="https://cdn.glitch.com/ca1b081c-b4c8-41bc-bb08-91d500baeab9%2Froboticon.png">
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Glitch Discord Starter Kit">
+    <meta itemprop="description" content="Build a Discord Bot on Glitch with this interactive install guide">
+    <meta itemprop="image" content="https://cdn.glitch.com/ca1b081c-b4c8-41bc-bb08-91d500baeab9%2Froboticon.png">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Glitch Discord Starter Kit">
+    <meta name="twitter:description" content="Build a Discord Bot on Glitch with this interactive install guide">
+    <meta name="twitter:site" content="@glitch">
+    <meta name="twitter:image:src" content="https://cdn.glitch.com/ca1b081c-b4c8-41bc-bb08-91d500baeab9%2Froboticon.png">
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Glitch Discord Starter Kit">
+    <meta name="og:description" content="Build a Discord Bot on Glitch with this interactive install guide">
+    <meta name="og:image" content="http://cdn.glitch.com/ca1b081c-b4c8-41bc-bb08-91d500baeab9%2Froboticon.png">
+    <meta name="og:url" content="http://starter-botkit-discord.glitch.me/">
+    <meta name="og:type" content="website">
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- import the webpage's stylesheet -->
-    <link
-      href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Press+Start+2P"
-      rel="stylesheet"
-    />
+    <link href="https://unpkg.com/nes.css@2.2.0/css/nes.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet" />
     <link rel="stylesheet" href="/style.css" />
 
     <!-- import the webpage's client-side javascript file -->
     <script src="/install.js" defer></script>
   </head>
+
   <body>
-    <header><h1>Starter Botkit Discord Install Guide</h1></header>
+    <header>
+      <h1>Glitch Discord Starter Kit Install Guide</h1>
+    </header>
 
     <main>
       <section>
@@ -51,12 +63,8 @@
             a randomly generated name which <a href="https://glitch.com/help/how-do-i-change-my-projects-name-description-avatar/" target="new">you can change.</a>
           </p>
 
-          <p >
-            <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"
-              ><img
-                src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg"
-                alt="Remix on Glitch"
-            /></a>
+          <p>
+            <a href="https://glitch.com/edit/#!/remix/starter-botkit-discord"><img src="https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg" alt="Remix on Glitch" /></a>
           </p>
           <div class="nes-container with-title is-centered">
             <p class="title">This Project's URL:</p>
@@ -75,11 +83,7 @@
               <!-- Balloon -->
               <div class="nes-balloon from-left">
                 Complete these at the
-                <a
-                  href="https://discordapp.com/developers/applications"
-                  target="new"
-                  >Discord Developer Portal</a
-                >
+                <a href="https://discordapp.com/developers/applications" target="new">Discord Developer Portal</a>
               </div>
             </div>
           </div>
@@ -88,11 +92,7 @@
               <input type="checkbox" class="nes-checkbox" />
               <span>
                 Login to the
-                <a
-                  href="https://discordapp.com/developers/applications"
-                  target="new"
-                  >My Applications section of the Discord Developer Portal</a
-                >
+                <a href="https://discordapp.com/developers/applications" target="new">My Applications section of the Discord Developer Portal</a>
               </span>
             </label>
 
@@ -183,7 +183,7 @@
                   Go to your .env file
                 </span>
               </label>
-  
+
               <label>
                 <input type="checkbox" class="nes-checkbox" />
                 <span> Copy your Discord Bot Token next to "DISCORD_TOKEN="</span>
@@ -191,16 +191,16 @@
 
             </div>
           </div>
-            <div class="nes-container is-rounded is-dark with-title">
-              <div class="title">Info</div>
-              <p>
-                You don't want to put tokens in <code>server.js </code> because by default
-                in Glitch anyone can see that file. And if you copy the project,
-                it will copy the file with the secure token. Yikes!
-              </p>
-            </div>
-
+          <div class="nes-container is-rounded is-dark with-title">
+            <div class="title">Info</div>
+            <p>
+              You don't want to put tokens in <code>server.js </code> because by default
+              in Glitch anyone can see that file. And if you copy the project,
+              it will copy the file with the secure token. Yikes!
+            </p>
           </div>
+
+        </div>
         </div>
       </section>
       <section>
@@ -225,9 +225,7 @@
             <ul class="nes-list is-circle">
               <li>Glitch apps automatically "sleep" after 5 minutes</li>
               <li>
-                <a href="https://glitch.com/help/restrictions/"
-                  >You can read more about that and other restrictions here.</a
-                >
+                <a href="https://glitch.com/help/restrictions/">You can read more about that and other restrictions here.</a>
               </li>
               <li>Sleeping bots drop out of any Discord servers they are in</li>
               <li>Sleeping bots will not respond to any messages</li>
@@ -250,21 +248,16 @@
           <div class="checklist">
             <label>
               <input type="checkbox" class="nes-checkbox" />
-              <span> Create an Uptime Robot account at the <a href="https://uptimerobot.com" target="new"
-                >Uptime Robot website</a
-              > </span>
+              <span> Create an Uptime Robot account at the <a href="https://uptimerobot.com" target="new">Uptime Robot website</a> </span>
             </label>
 
             <label>
               <input type="checkbox" class="nes-checkbox" />
               <span>
                 Go to
-                <a href="https://uptimerobot.com/dashboard#mySettings"
-                  >your settings</a
-                >
+                <a href="https://uptimerobot.com/dashboard#mySettings">your settings</a>
                 under "Main API Key" click the button to generate an API
-                key</span
-              >
+                key</span>
             </label>
 
             <label>
@@ -282,10 +275,10 @@
               <span> Put it in your .env file after "UPTIME_ROBOT_KEY=" </span>
             </label>
           </div>
-            <a href="" class="envFileLink nes-btn" id="envFileLinkUptime" target="editit">
-              <i class="nes-icon is-small star"></i> Click here to go to your
-              <code>.env</code> file <i class="nes-icon is-small star"></i>
-            </a>
+          <a href="" class="envFileLink nes-btn" id="envFileLinkUptime" target="editit">
+            <i class="nes-icon is-small star"></i> Click here to go to your
+            <code>.env</code> file <i class="nes-icon is-small star"></i>
+          </a>
         </div>
       </section>
 
@@ -328,10 +321,7 @@
               <p>
                 the good news is you have a good .env file the bad news is it
                 doesn't recognize your token. Head to the
-                <a
-                  href="https://discordapp.com/developers/applications"
-                  target="new"
-                  >Discord Developer Portal
+                <a href="https://discordapp.com/developers/applications" target="new">Discord Developer Portal
                 </a>
                 to make sure you have the right one
               </p>
@@ -355,4 +345,5 @@
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
   </body>
+
 </html>

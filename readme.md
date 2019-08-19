@@ -31,7 +31,7 @@ This is the styling for the install and setup guides
 
 ### skills/hears.js
 
-This is an [Botkit](https://botkit.ai/) skill for your bot allowing it to respond to certain words it "hears" on the server. Head
+This is an [Botkit](https://botkit.ai/) skill for your bot allowing it to respond to certain words it "hears" on the server.
 
 ### views/index.html
 
