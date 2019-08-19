@@ -146,8 +146,12 @@ router.get("/checkinstall", function(request, response) {
     });
   }
 });
-
-if (!process.env.DISCORD_TOKEN) {
+if (process.env.GUIDE){
+  router.get("/", function(request, response) {
+    response.sendFile(__dirname + "/views/remix.html");
+  });
+}
+else if (!process.env.DISCORD_TOKEN) {
   router.get("/", function(request, response) {
     response.sendFile(__dirname + "/views/install.html");
   });
