@@ -19,9 +19,6 @@ uptimeNotFound.style.display = "none";
 const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
 uptimeNotSetUp.style.display = "none";
 
-const uptimeNotWorking = document.getElementById("uptime-not-working");
-uptimeNotWorking.style.display = "none";
-
 const uptimeWorking = document.getElementById("uptime-working");
 uptimeWorking.style.display = "none";
 
@@ -80,13 +77,10 @@ function monitorSetup() {
   return fetch("/createMonitor")
     .then(res => res.json())
     .then(resJson => {
-      console.log(resJson)
-      if (resJson.name == "UptimeRobotServerError") {
-        uptimeNotWorking.style.display = "block";
+      if (resJson.error) {
+        console.log(resJson.error);
       } else {
         console.log(resJson.message);
-        uptimeWorking.style.display = "block";
-
       }
       return Promise.resolve();
     });
