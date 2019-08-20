@@ -6,7 +6,6 @@ const configuration = {
 };
 
 const discordBot = discordBotkit(configuration);
-console.log(discordBot)
   var normalizedPath = require("path").join(__dirname, "skills");
 
   require("fs").readdirSync(normalizedPath).forEach(function(file) {
