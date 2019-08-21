@@ -13,20 +13,6 @@ noClientFound.style.display = "none";
 const clientFound = document.getElementById("client-found");
 clientFound.style.display = "none";
 
-const uptimeNotFound = document.getElementById("uptime-not-found");
-uptimeNotFound.style.display = "none";
-
-const uptimeNotSetUp = document.getElementById("uptime-not-set-up");
-uptimeNotSetUp.style.display = "none";
-
-const uptimeNotWorking = document.getElementById("uptime-not-working");
-uptimeNotWorking.style.display = "none";
-
-const uptimeWorking = document.getElementById("uptime-working");
-uptimeWorking.style.display = "none";
-
-const uptimeButton = document.getElementById("uptime-robot-button");
-uptimeButton.style.display = "none";
 
 const readmeFileLink = document.getElementById("readme-file-link");
 
@@ -60,14 +46,6 @@ function getDomain() {
           noClientFound.style.display = "block";
         }
 
-        if (resJson.uptimeRobotApiKey && resJson.uptimeRobotMonitor) {
-          uptimeWorking.style.display = "block";
-        } else if (resJson.uptimeRobotApiKey) {
-          uptimeNotSetUp.style.display = "block";
-          uptimeButton.style.display = "block";
-        } else {
-          uptimeNotFound.style.display = "block";
-        }
       }
       return Promise.resolve();
     });
@@ -75,22 +53,6 @@ function getDomain() {
 
 getDomain();
 
-function monitorSetup() {
-  console.log("test");
-  return fetch("/createMonitor")
-    .then(res => res.json())
-    .then(resJson => {
-      console.log(resJson)
-      if (resJson.name == "UptimeRobotServerError") {
-        uptimeNotWorking.style.display = "block";
-      } else {
-        console.log(resJson.message);
-        uptimeWorking.style.display = "block";
-
-      }
-      return Promise.resolve();
-    });
-}
 
 function clipboard(element) {
   let copyText = document.getElementById(element);
