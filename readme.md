@@ -28,6 +28,6 @@ Feel free to send any feedback or comments here or on the blog posts!
 
 ## Licenses
 MIT
--- Clause: By usage of this code you promise to share, grow, and promote others through the beauty and magic of code.
+**My Only Clause:** By usage of this code you promise to share, grow, and promote others through the beauty and magic of code, especially others in need.
 
 Brandon Him
