@@ -1,12 +1,14 @@
-# Pokedex Discord Bot
+# Pokédex Discord Bot
+This a discord chatbot the provides search and voice funcionality of a Pokedex all within Discord.
+
 ![demo](http://g.recordit.co/4gbDcJ9Yr1.gif)
+
 This code is built on top of the [Glitch's Discord Starter](https://github.com/FogCreek/starter-discord)
 
 ## Features
 - Search functionality with `!pokedex <name / number>`
 - Voice playback of description (coming soon)
-
-This a discord chatbot the provides search and voice funcionality of a Pokedex all within Discord. Built in conjunction with an ongoing tutorial on Medium:
+- "No Data" Error
 
 ## Learn
 This repository was built in conjunction to the following tutorials written on Medium:
