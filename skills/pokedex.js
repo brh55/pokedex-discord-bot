@@ -1,12 +1,14 @@
 const Pokedex = require('../services/pokedex');
+const Speech = require('../services/speech');
+const util = require('util');
 const convert = require('convert-units');
+process.on("unhandledRejection", console.error);
 
 // Add this helper method
 const parseParameter = (command, text) => {
 	const start = text.indexOf(command);
 	const textStart = text.substring(start)
 	const parameters = textStart.split(" ");
-	console.log(parameters)
 
 	if (parameters[1]) {
 		return parameters[1];
@@ -47,29 +49,42 @@ module.exports = controller => {
 		// ambient = all of chat the bot is in
 		// direct_message = any messages directly sent to the bot
 		['ambient', 'direct_message'],
-        (bot, message) => {
+        async (bot, message) => {
             const parameter = parseParameter(POKEDEX_CMD, message.text);
 
             if (parameter) {
-           		Pokedex.search(parameter)
-					.then(result => {
-						const embed = new controller.RichEmbed();
-						embed.setAuthor(
-							"Pokedex",
-							"https://icon-library.net/images/pokedex-icon/pokedex-icon-15.jpg" // Grabbing this icon from icon-library
-						);
-						embed.setTitle(formatName(result.name));
-						embed.setDescription(`**No. ${response.id}** \n **${response.types[1].type.name}**`);
-						embed.setThumbnail(result.sprites.front_default);
-						embed.addField("Weight", formatWeight(result.weight));
-						embed.addField("Height", formatHeight(result.height));
-						embed.setColor("GREEN");
-						embed.addField("Description", result.description);
-                        bot.reply(message, embed);
-					})
-					.catch((e) => {
-						bot.reply(message, 'NO DATA')
-					})
+				try {
+					const result = await Pokedex.search(parameter)
+					const embed = new controller.RichEmbed();
+					embed.setAuthor(
+						"Pokedex",
+						"https://icon-library.net/images/pokedex-icon/pokedex-icon-15.jpg" // Grabbing this icon from icon-library
+					);
+					embed.setTitle(formatName(result.name));
+					embed.setDescription(`**No. ${result.id}** \n **${result.types[0].type.name}**`);
+					embed.setThumbnail(result.sprites.front_default);
+					embed.addField("Weight", formatWeight(result.weight));
+					embed.addField("Height", formatHeight(result.height));
+					embed.setColor("GREEN");
+					embed.addField("Description", result.description);
+
+					if (bot.api.joinVoiceChannel) {
+						const voiceFile = await Speech.synthesize(result);
+						const connection = await bot.api.joinVoiceChannel();
+						const dispatcher = connection.playFile(voiceFile);
+
+						dispatcher.setVolume(0.5);
+						dispatcher.on('end', () => {
+							bot.api.leaveVoiceChannel();
+							dispatcher.destroy();
+						});
+					}
+
+					bot.reply(message, embed);
+				} catch(err) {
+					console.log(err);
+					bot.reply(message, 'NO DATA')
+				}
             } else {
                 bot.reply(message, 'Please try again with a name or number');
             }

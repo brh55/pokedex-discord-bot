@@ -10,10 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@google-cloud/text-to-speech": "^1.3.0",
     "botkit-discord": "0.1.2",
     "convert-units": "^2.3.4",
     "dot-env": "0.0.1",
     "express": "^4.16.4",
+    "ffmpeg": "0.0.4",
+    "ffmpeg-binaries": "^4.0.0",
+    "opusscript": "0.0.7",
     "pokedex-promise-v2": "^3.2.0",
     "uptime-robot": "^1.3.0"
   }
