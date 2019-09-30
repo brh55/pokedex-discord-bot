@@ -1,80 +1,23 @@
-# Botkit Discord Starter App
+# Pokdex Discord Bot
 
-Starter Botkit Discord is a Discord bot with an interactive setup and coding guide. Click "Show" to start following the guide. We recommend following the guide before you go through the code here. 
+![demo](http://g.recordit.co/4gbDcJ9Yr1.gif)
 
-The Install guide connects your Glitch app to a Discord app. It also teaches some important basic security guide. The Setup guide shows you how to add it to a Discord Server, keep it up and running, and add new functionality.
+A Discord Pokédex Bot built on top of Botkit and Discord.js.
+The bot features the following: 
+- Rich Embed messages for visual experience
+- Audio Playback for richer audio experience
 
-It uses
+This code is built on top of the [Glitch starter discord](https://github.com/FogCreek/starter-discord)
 
-- Botkit: a handy bot building framework
-- Discord.js: a node module for connecting to the Discord API
-- Botkit Discord: A connector that allows you to use Bokit and Discord.js
-- Uptime Robot: A monitoring service that helps keep your bot running 24/7
+### Tutorials:
+If you would like to learn how to build this project from scratch, you can read up on the tutorial below:
 
-## The Code
+- [Part 1 - Project Scoping, Requirements, and Design](https://chatbotslife.com/discord-pok%C3%A9dex-chatbot-tutorial-part-1-b003b7decb5e)
+- [Part 2 - Poke Api Lookup, and Discord Rich Embed (Visual Messages)](https://chatbotslife.com/discord-pok%C3%A9dex-chatbot-tutorial-part-2-ec57490f8e02)
+- Part 3 - Google Text-to-Speech API, and Discord Voice Playback - Coming Soon
 
-### assets
-
-This is where you [can add images, sound files, and other media](https://glitch.com/help/how-do-i/).
-
-### public/client.js
-
-This is the interactive code for the setup guide.
-
-### public/install.js
-
-This is the interactive code for the install guide.
-
-### public/style.css
-
-This is the styling for the install and setup guides
-
-### skills/hears.js
-
-This is an [Botkit](https://botkit.ai/) skill for your bot allowing it to respond to certain words it "hears" on the server.
-
-### views/index.html
-
-This is the basic webpage for the setup guide
-
-### views/install.html
-
-This is the basic webpage for the install guide
-
-### .env
-
-This is a file for storing secure info like API keys
-
-### .gitignore
-
-Git is a "version control" system, which is a fancy way of saying it backs up a record of all your code. This file tells git not to back up certain files. For example `.env` we don't want it backing up because it contains secure info.
-
-## bot.js
-
-This is the base code initializing the bot by giving it to the Discord Api key and telling it where the skills files are
-
-## guides.js
-
-This contains the code that makes the guides accessible and interactive
-
-### package.json
-
-This is a file that contains info about your project, like what [node modules it should install](https://glitch.com/help/how-do-i-add-an-npm-module-package-to-my-project/)
-
-## readme.md
-
-This is this file! It's full of helpful info.
-
-## server.js
-
-This contains the code that connects all the different pieces of the bot together so it can be started by package.json
-
-## Get Started
-
-Remix this app and click show! The install guide will walk you all the steps needed.
-
-## I finished the install and setup guide!
-
-Congrads! I bet you're excited to get started with customizing your bot
-* Head to skills/hears.js to learn how a Botkit skill works and how to customize it
-* Check out our [Discord collection](https://glitch.com/@glitch/discord) for some examples – feel free to copy the code into your own bot or remix them
+## Usage
+1. `git clone`
+2. `npm install`
+3. Update token in bot.js
+4. `npm start`
