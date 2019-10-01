@@ -72,7 +72,6 @@ module.exports = controller => {
 						const voiceFile = await Speech.synthesize(result);
 						const connection = await bot.api.joinVoiceChannel();
 						const dispatcher = connection.playFile(voiceFile);
-
 						dispatcher.setVolume(0.5);
 						dispatcher.on('end', () => {
 							bot.api.leaveVoiceChannel();
@@ -82,7 +81,6 @@ module.exports = controller => {
 
 					bot.reply(message, embed);
 				} catch(err) {
-					console.log(err);
 					bot.reply(message, 'NO DATA')
 				}
             } else {
