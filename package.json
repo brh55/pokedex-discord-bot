@@ -14,7 +14,7 @@
     "botkit-discord": "0.1.2",
     "convert-units": "^2.3.4",
     "dot-env": "0.0.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "ffmpeg": "0.0.4",
     "ffmpeg-binaries": "^4.0.0",
     "opusscript": "0.0.7",
